@@ -41,8 +41,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -50,19 +50,8 @@
     </nav>
 
     <div class="container">
-      <div class="letsplay">
-        <img src="images/elephant.png" alt="">
-        <h1>Let's play?</h1>
-        <p id="question" class="lead">Привет! Купи слона!</p>
-        <form>
-          <div class="row">
-            <div class="form-group col-md-4 col-md-offset-4">
-              <input type="text" class="form-control input-lg" id="answer" placeholder="Ответ">
-            </div>
-          </div>
-          <button id="btn" type="submit" class="btn btn-primary" onclick="kupi();return false;">Ответить</button>
-        </form>
-      </div>
+      <p class="text-justify">Привет! Меня зовут Чемышенко Денис, мне 27 лет (1989 г.р.). Популярный сервис GitHub позволяет совершенно бесплатно разместить немного статики в интернете, а заодно довольно простой способ вдоволь поупражняться в HTML, CSS и JavaScript. Этим собственно мы и займемся на страницах этого маленького сайта.
+      Так же в разделе контакты вы найдете ссылки на меня в популярных социальных сетях и мой <a href="http://grbl.mk.ua">блог</a>.</p>
 
 
       <hr>
@@ -81,25 +70,6 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script>
-      function kupi() {
-        var answerField = document.getElementById('answer');
-        var elementQuestion = document.getElementById('question');
-        var input = answerField.value;
-          if (input == 'ок'){
-            alert('Поздравляю с покупкой слона! Продолжаем)');
-          } else if (input == '' || input == ' ') {
-            elementQuestion.innerHTML = 'Не молчи, покупай слона!';
-            answerField.focus();
-            answerField.select();
-          } else {
-            elementQuestion.innerHTML = 'Все говорят "' + input +'", а ты купи слона';
-            answerField.focus();
-            answerField.select();
-          }
-      }
-    </script>
   </body>
 </html>
