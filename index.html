@@ -84,20 +84,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script>
-      function kupi() {
+      function changeLabel(text) {
         var answerField = document.getElementById('answer');
         var elementQuestion = document.getElementById('question');
-        var input = answerField.value;
+        elementQuestion.innerHTML = text;
+        answerField.focus();
+        answerField.select();
+      }
+
+      function kupi() {
+        var input = document.getElementById('answer').value;
           if (input == 'ок'){
             alert('Поздравляю с покупкой слона! Продолжаем)');
           } else if (input == '' || input == ' ') {
-            elementQuestion.innerHTML = 'Не молчи, покупай слона!';
-            answerField.focus();
-            answerField.select();
+            changeLabel('Не молчи, покупай слона!');
           } else {
-            elementQuestion.innerHTML = 'Все говорят "' + input +'", а ты купи слона';
-            answerField.focus();
-            answerField.select();
+            changeLabel('Все говорят "' + input +'", а ты купи слона');
           }
       }
     </script>
