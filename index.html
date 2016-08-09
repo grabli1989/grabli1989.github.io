@@ -4,362 +4,276 @@
 <!--[if IE 9]><html class="ie ie9 lte9" lang="en-US"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html class="noIE" lang="en-US">
-  <!--<![endif]-->
-  <head>
-    <title>wellwebsolutions.com</title>
+<!--<![endif]-->
+
+<head>
+    <title>WellWebSolutions</title>
 
     <!-- meta -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no"/>
-
-    <!-- google fonts -->
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans'>
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold"/>
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+Sans:regular,italic,bold,bolditalic"/>
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Nixie+One:regular,italic,bold,bolditalic"/>
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alegreya+SC:regular,italic,bold,bolditalic"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa:300">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
 
     <!-- css -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/style.css" media="screen"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css" media="screen" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <script src="assets/js/respond.js"></script> <![endif]-->
 
     <!--[if IE 8]> <script src="assets/js/selectivizr.js"></script> <![endif]-->
-  </head>
+</head>
 
-  <body>
-    <div id="drawer-right">
-      <div class="cross text-right">
-        <a class="toggleDrawer" href="#">
-          <i class="fa fa-times-circle fa-2x"></i>
-        </a>
-      </div>
-      <h2>Меню навигации</h2>
-      <nav>
-        <ul class="nav nav-pills nav-stacked">
-          <li>
-            <a href="#wrapper">
-              <i class="fa fa-home"></i>
-              Главная</a>
-          </li>
-          <li>
-            <a href="#portfolio">
-              <i class="fa fa-bookmark"></i>
-              Портфолио</a>
-          </li>
-          <li>
-            <a href="#services">
-              <i class="fa fa-tasks"></i>
-              Услуги</a>
-          </li>
-          <li>
-            <a href="#blog">
-              <i class="fa fa-wordpress"></i>
-              Блог</a>
-          </li>
-          <li>
-            <a href="#parallax">
-              <i class="fa fa-heart"></i>
-              Parallax</a>
-          </li>
-          <li>
-            <a href="#testimonials">
-              <i class="fa fa-thumbs-up"></i>
-              Отзывы</a>
-          </li>
-          <li>
-            <a href="#contact">
-              <i class="fa fa-phone-square"></i>
-              Связаться с нами</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="social">
-        <h2>Оставайтесь на связи</h2>
-        <ul>
-          <li>
-            <a href="">
-              <i class="fa fa-facebook-square fa-3x"></i>
+<body>
+    <div id="drawer-top">
+
+        <nav class="navbar navbar-default navbar-static-top navbar-centered">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#"><img src="images/logo.mini.png" alt="" />ГЛАВНАЯ</a>
+                        </li>
+                        <li class="divider-vertical"></li>
+                        <li>
+                            <a href="#services"><img class="hiddenimg" src="images/logo.mini.png" alt="" />ШАБЛОНЫ</a>
+                        </li>
+                        <li class="divider-vertical"></li>
+                        <li>
+                            <a href="#portfolio"><img class="hiddenimg" src="images/logo.mini.png" alt="" />ПОРТФОЛИО</a>
+                        </li>
+                        <li class="divider-vertical"></li>
+                        <li>
+                            <a href="#blog"><img class="hiddenimg" src="images/logo.mini.png" alt="" />БЛОГ</a>
+                        </li>
+                        <li>
+                            <div class="lang pull-right"><a href="#">RU</a> / <a href="#">EN</a></div>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div class="cross text-right toggleshortcut">
+            <a class="toggleDrawer" href="#">
+                <div class="container">
+                    <div class="shortcut pull-right"></div>
+                </div>
             </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="fa fa-twitter-square fa-3x"></i>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="fa fa-google-plus-square fa-3x"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+        </div>
     </div>
-    <!-- #drawer-right -->
-
+    <!-- #drawer-top -->
     <div id="wrapper">
-
-      <div id="header" class="content-block">
-        <section class="top clearfix">
-          <div class="pull-left">
-            <h1>
-              <a class="logo" href="index.html">wellwebsolutions.com</a>
-            </h1>
-          </div>
-          <div class="pull-right">
-            <a class="toggleDrawer" href="#">MENU&nbsp;<i class="fa fa-bars"></i>
-            </a>
-          </div>
-        </section>
-        <section class="center">
-          <div class="slogan">
-            SLIM &amp; STYLISH
-          </div>
-          <div class="secondary-slogan">
-            Мы разрабатываем Веб-приложения
-          </div>
-        </section>
-        <section class="bottom">
-          <a id="scrollToContent" href="#">
-            <img src="assets/images/arrow_down.png">
-          </a>
-        </section>
-      </div>
-      <!-- header -->
-
-      <div class="content-block" id="portfolio">
-        <div class="container">
-          <header class="block-heading cleafix">
-            <a href="#" class="btn btn-o btn-lg pull-right">Посмотреть все</a>
-            <h1>Наши последние работы</h1>
-            <p>Взгляните на некоторые из наших последних продуктов</p>
-          </header>
-          <section class="block-body">
-            <div class="row">
-              <div class="col-sm-4">
-                <a class="recent-work" style="background-image:url(assets/images/fservice320x240.jpg)">
-                  <span class="btn btn-o-white" data-toggle="modal" data-target="#f">Увеличить</span>
-                </a>
-
-                <div class="modal fade" id="f" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                      <img src="assets/images/fservice.jpg" alt="">
+        <div id="top" class="content-block">
+            <section class="top clearfix">
+                <!-- Slider main container -->
+                <div id="swiper-header" class="swiper-container">
+                    <div class="container">
+                        <div class="row texttoswiper">
+                            <h1>РАЗРАБОТКА САЙТОВ<br>И ПРОДВИЖЕНИЕ</h1>
+                            <p>Полный пакет услуг:
+                                <br>регистрация домена, веб-дизайн, верстка,
+                                <br>создание сайта, добавление в поисковые
+                                <br> системы и продвижение сайта по ключевым
+                                <br> словам </p>
+                        </div>
                     </div>
-                  </div>
-                </div>
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide slide1"></div>
+                        <div class="swiper-slide slide2"></div>
+                        <div class="swiper-slide slide3"></div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
 
-              </div>
-              <div class="col-sm-4">
-                <a href="#" class="recent-work" style="background-image:url(assets/images/min_icons_thumb1-320x240.jpg)">
-                  <span class="btn btn-o-white">Увеличить</span>
-                </a>
-              </div>
-              <div class="col-sm-4">
-                <a href="#" class="recent-work" style="background-image:url(assets/images/flat_icons_thumb.jpg)">
-                  <span class="btn btn-o-white">Увеличить</span>
-                </a>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-4">
-                <a href="#" class="recent-work" style="background-image:url(assets/images/wood-320x240.jpg)">
-                  <span class="btn btn-o-white">Увеличить</span>
-                </a>
-              </div>
-              <div class="col-sm-4">
-                <a href="#" class="recent-work" style="background-image:url(assets/images/bike-320x240.jpg)">
-                  <span class="btn btn-o-white">Увеличить</span>
-                </a>
-              </div>
-              <div class="col-sm-4">
-                <a href="#" class="recent-work" style="background-image:url(assets/images/six_1-320x240.jpg)">
-                  <span class="btn btn-o-white">Увеличить</span>
-                </a>
-              </div>
-            </div>
-          </section>
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                    <div class="swiper-button-next swiper-button-white"></div>
+
+                </div>
+            </section>
         </div>
-      </div>
-      <!-- #portfolio -->
 
-      <div class="content-block parallax" id="services">
-        <div class="container text-center">
-          <header class="block-heading cleafix">
-            <h1>Наши услуги</h1>
-            <p>Немного о том, что мы можем Вам предложить.</p>
-          </header>
-          <section class="block-body">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="service">
-                  <i class="fa fa-send-o"></i>
-                  <h2>Веб дизайн</h2>
-                  <p>Мы разработаем не только красивый но и функциональный и максимально понятный дизайн.</p>
+        <div id="welcome" class="content-block">
+            <div class="container">
+                <div class="row">
+                    <header class="block-heading clearfix">
+                        <div class="logo">
+                            <div class="line">
+                                <hr>
+                            </div>
+                        </div>
+                        <p class="h1 text-center">Добро пожаловать</p>
+                        <p>Мы рады приветствовать вас на нашем сайте</p>
+                    </header>
+                    <section class="welcome">
+                        <p class="text-center">Задача организации, в особенности же консультация с широким активом играет важную роль в формировании соответствующий условий активизации. Не следует, однако забывать, что консультация с широким активом обеспечивает широкому кругу
+                            (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач.</p>
+                    </section>
                 </div>
-              </div>
-              <div class="col-md-4">
-                <div class="service">
-                  <i class="fa fa-heart-o"></i>
-                  <h2>Разработка веб-приложений</h2>
-                  <p>Наша комманда создаст для Вас веб-приложение любой сложности.</p>
+                <div class="row">
+                    <section id="services">
+                        <div class="col-md-3">
+                            <div class="circle">
+                                <div class="circlechild">
+                                    <div class="i"><i class="fa fa-magic fa-4x" aria-hidden="true"></i></div>
+                                </div>
+                            </div>
+                            <header>
+                                <h3>Дизайн</h3>
+                            </header>
+                            <section>
+                                <p>Создание современного, оригинального и функционального дизайна Вашего сайта.</p>
+                            </section>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="circle lite">
+                                <div class="circlechild">
+                                    <div class="i"><i class="fa fa-code fa-4x" aria-hidden="true"></i></div>
+                                </div>
+                            </div>
+                            <header>
+                                <h3>Вёрстка</h3>
+                            </header>
+                            <section>
+                                <p>Правильно сверстанный макет способствует хорошему продвижению сайта в сети Интернет.</p>
+                            </section>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="circle">
+                                <div class="circlechild">
+                                    <div class="i"><i class="fa fa-cogs fa-4x" aria-hidden="true"></i></div>
+                                </div>
+                            </div>
+                            <header>
+                                <h3>Программинг</h3>
+                            </header>
+                            <section>
+                                <p>Владение всеми навыками HTML/CSS/JS(jQuery)
+                                    <br>Знание PHP/Mysql
+                                    <br>Опыт работы с Wordpress</p>
+                            </section>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="circle lite">
+                                <div class="circlechild">
+                                    <div class="i"><i class="fa fa-rocket fa-4x" aria-hidden="true"></i></div>
+                                </div>
+                            </div>
+                            <header>
+                                <h3>Продвижение</h3>
+                            </header>
+                            <section>
+                                <p>Поисковое продвижение, контекстная реклама, продвижение в социальных сетях, управление репутацией в интернете.</p>
+                            </section>
+                        </div>
+                    </section>
                 </div>
-              </div>
-              <div class="col-md-4">
-                <div class="service">
-                  <i class="fa fa-camera-retro"></i>
-                  <h2>Размещение сайтов в Интернете</h2>
-                  <p>Предоставляем услуги хостинга для сайтов в сети Интернет.</p>
-                </div>
-              </div>
             </div>
-          </section>
         </div>
-      </div>
-      <!-- #services -->
 
-      <div class="content-block" id="blog">
-        <div class="container">
-          <header class="block-heading cleafix">
-            <a href="#" class="btn btn-o btn-lg pull-right">Посмотреть всё</a>
-            <h1>Из нашего блога</h1>
-            <p>Оставайтесь в курсе последних событий</p>
-          </header>
-          <section class="block-body">
-            <div class="row">
-              <div class="col-sm-4 blog-post">
-                <img src="assets/images/bike_water1-1000x600.jpg">
-                <a href="#">
-                  <h2>Design Your Mind</h2>
-                </a>
-                <div class="date">3 Nov, 2014</div>
-                <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-                <a href="">Read More</a>
-              </div>
-              <div class="col-sm-4 blog-post">
-                <img src="assets/images/mac_glasses1-1000x600.jpg">
-                <a href="#">
-                  <h2>Winter Is Comming</h2>
-                </a>
-                <div class="date">3 Nov, 2014</div>
-                <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-                <a href="">Read More</a>
-              </div>
-              <div class="col-sm-4 blog-post">
-                <img src="assets/images/road-1000x600.jpg">
-                <a href="#">
-                  <h2>The Illustration</h2>
-                </a>
-                <div class="date">3 Nov, 2014</div>
-                <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-                <a href="">Read More</a>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-      <!-- #blog -->
+        <div id="blogquotes" class="content-block">
+            <section class="top clearfix">
+                <!-- Slider main container -->
+                <div id="swiper-blogquotes" class="swiper-container">
+                    <div class="container">
+                        <div class="row quotes">
+                            <div class="col-md-1">
+                                <p class="quote">“</p>
+                            </div>
+                            <div class="col-md-11">
+                                <h1>Заголовок</h1>
+                                <p>Задача организации, в особенности же консультация с широким активом играет важную роль в формировании соответствующий условий активизации. Не следует, однако забывать, что консультация с широким активом обеспечивает широкому
+                                    кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач.
+                                </p>
+                                <p><a id="link_readall" href="#readall">читать все</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide slide4"></div>
+                        <div class="swiper-slide slide5"></div>
+                    </div>
 
-      <div class="content-block parallax" id="parallax">
-        <div class="container text-center">
-          <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
-          <a href="" class="btn btn-o-white btn-lg">Get a free quote</a>
-        </div>
-      </div>
-      <!-- #parallax -->
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                    <div class="swiper-button-next swiper-button-white"></div>
 
-      <div class="content-block" id="testimonials">
-        <div class="container">
-          <header class="block-heading cleafix">
-            <h1>Отзывы</h1>
-            <p>Вот что говорят наши клиенты</p>
-          </header>
-          <section class="block-body">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="testimonial">
-                  <img src="assets/images/testimonial_31-190x190.jpg">
-                  <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-                  <strong>Denis Grbl</strong><br/>
-                  <span>System engineer</span>
                 </div>
-              </div>
-              <div class="col-md-4">
-                <div class="testimonial">
-                  <img src="assets/images/testimonial_11-190x190.jpg">
-                  <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-                  <strong>Malta</strong><br/>
-                  <span>Home pet</span>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="testimonial">
-                  <img src="assets/images/testimonial_22-190x190.jpg">
-                  <p>In at accumsan risus. Nam id volutpat ante. Etiam vel mi mattis, vulputate nunc nec, sodales nibh. Etiam nulla magna, gravida eget ultricies sit amet, hendrerit in lorem.</p>
-                  <strong>Ada Lovelace</strong><br/>
-                  <span>First computer programmer</span>
-                </div>
-              </div>
-            </div>
-          </section>
+            </section>
         </div>
-      </div>
-      <!-- /#testimonials -->
 
-      <div class="content-block" id="contact">
-        <div class="container text-center">
-          <header class="block-heading cleafix">
-            <h1>Свяжитесь с нами</h1>
-            <p>Не стесняйтесь, напишите нам.</p>
-          </header>
-          <section class="block-body">
-            <div class="row">
-              <div class="col-md-6 col-md-offset-3">
-                <form class="" role="form">
-                  <div class="form-group">
-                    <input type="email" class="form-control form-control-white" id="subject" placeholder="Ваше имя" required>
-                  </div>
-                  <div class="form-group">
-                    <input type="email" class="form-control form-control-white" id="exampleInputEmail2" placeholder="Ваш email" required>
-                  </div>
-                  <div class="form-group">
-                    <textarea class="form-control form-control-white" placeholder="Напишите всё что угодно" required></textarea>
-                  </div>
-                  <input type="submit" class="btn btn-o-white" value="Say Hello">
-                </form>
-              </div>
+        <div id="news" class="content-block">
+            <div class="container">
+                <div class="row">
+                    <header class="block-heading clearfix">
+                        <div class="logo">
+                            <div class="line">
+                                <hr>
+                            </div>
+                        </div>
+                        <p class="h1 text-center">Новости</p>
+                    </header>
+
             </div>
-          </section>
-        </div>
-      </div>
-      <!-- #contact -->
-
-      <div class="content-block" id="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-xs-6">&copy; Copyright wellwebsolutions.com 2016</div>
           </div>
         </div>
-      </div>
-      <!-- #footer -->
 
     </div>
-    <!--/#wrapper-->
+    <!-- wrapper -->
 
-    <script src="assets/js/jquery-2.1.3.min.js"></script>
-    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.actual.min.js"></script>
-    <script src="assets/js/jquery.scrollTo.min.js"></script>
-    <script src="assets/js/script.js"></script>
 
-  </body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.actual.min.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/swiper.jquery.min.js"></script>
+    <script src="js/selectivizr.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        var mySwiper = new Swiper('#swiper-header', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+
+            // Navigation arrows
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+
+        });
+
+        var mySwiper = new Swiper('#swiper-blogquotes', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // Navigation arrows
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+
+        });
+    </script>
+
+</body>
+
 </html>
