@@ -405,3 +405,57 @@ section .circle .circlechild .i {
 .circle.lite .circlechild:hover {
   background-color: #b1de60;
 }
+
+.even, .uneven {
+  width: 100%;
+  height: auto;
+  background-color: #f9f9f9;
+  margin-bottom: 21px;
+  color: #4a4a4a;
+}
+
+.even .news, .uneven .news {
+  padding: 25px;
+  overflow: hidden;
+}
+
+.even .news p, .uneven .news p {
+  font-family: "Lato-Regular";
+}
+
+.even .news p.caption, .uneven .news p.caption {
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+.even p.date, .uneven p.date {
+  color: #91bb44;
+}
+
+.even p.newstext, .uneven p.newstext {
+  font-size: 14px;
+}
+
+.uneven img {
+  float: left;
+}
+
+.even img {
+  float: right;
+}
+
+.btn-more {
+  border-radius: 0;
+  border: 0;
+  padding: 4px 15px;
+  background-color: #42a2e9;
+  font-size: 14px;
+  font-family: "Lato-Regular";
+}
+
+@media (max-width: 768px) {
+  .even img, .uneven img {
+    float: none;
+  }
+}

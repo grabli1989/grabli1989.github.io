@@ -310,3 +310,51 @@ section .circle
     background-color: $bluelight
     &:hover
       background-color: $greenlight
+
+
+
+// NEWS BEGINE
+$newstextcolor: #4a4a4a
+$datecolor: $green
+$buttoncolor: #42a2e9
+
+.even, .uneven
+  width: 100%
+  height: auto
+  background-color: #f9f9f9
+  margin-bottom: 21px
+  color: $newstextcolor
+  .news
+    padding: 25px
+    overflow: hidden
+    p
+      font-family: $font-regular
+    p.caption
+      text-transform: uppercase
+      margin-bottom: 0
+      font-size: 20px
+  p.date
+    color: $datecolor
+  p.newstext
+    font-size: 14px
+
+
+.uneven
+  img
+    float: left
+
+.even
+  img
+    float: right
+
+.btn-more
+  border-radius: 0
+  border: 0
+  padding: 4px 15px
+  background-color: $buttoncolor
+  font-size: 14px
+  font-family: $font-regular
+
+@media(max-width: 768px)
+  .even img, .uneven img
+    float: none
