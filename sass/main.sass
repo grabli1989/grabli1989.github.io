@@ -2,6 +2,7 @@ $font-stack:    'Lato-Light', 'Open Sans'
 $font-regular: 'Lato-Regular'
 $font-medium: 'Lato-Medium'
 $font-hairline: 'Lato-Hairline'
+$font-semibold: 'Lato-Semibold'
 $primary-color: #fff
 $blue: #42a2e5
 $bluelight: #7ecefd
@@ -11,6 +12,7 @@ $greenlight: #b1de60
 @font-face
   font-family: 'Lato-Regular'
   src: url('/fonts/Lato/Lato-Regular.ttf')
+
 
 @font-face
   font-family: 'Lato-Medium'
@@ -24,6 +26,10 @@ $greenlight: #b1de60
   font-family: 'Lato-Hairline'
   src: url('/fonts/Lato/Lato-Hairline.ttf')
 
+@font-face
+  font-family: 'Lato-Semibold'
+  src: url('/fonts/Lato/Lato-Semibold.ttf')
+
 body
   font-size: 16px
   min-width: 320px
@@ -33,6 +39,7 @@ body
   overflow-x: hidden
   color: $primary-color
   height: 5000px
+
 
 p, h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6
@@ -60,13 +67,26 @@ a
 #drawer-top
   font-family: $font-stack
   position: fixed
-  top: 0
-  margin-top: -120px
-  background: $primary-color
   width: 100%
   height: 120px
+  margin-top: 0
   padding: 0
   z-index: 999
+
+
+.toggleshortcut
+  top: 120
+  position: fixed
+  width: 100%
+  height: 4px
+  background-color: $blue
+  z-index: 999
+  .shortcut
+    width: 43px
+    height: 37px
+    margin-right: 15px
+    border-radius: 6px
+    background: url(/images/logo_white.png) no-repeat center center $blue
 
 @media(max-width: 992px)
   .navbar-brand
@@ -88,15 +108,17 @@ a
     height: 60px
     top: 0
     margin-top: 0
-    background: $primary-color
+    // background: $primary-color
     width: 100%
     padding: 0
-    z-index: 999
+    // z-index: 999
 
   .shortcut
     display: none
 
 @media(min-width: 768px)
+  #wrapper
+    margin-top: 120px
   nav
     height: 120px
   .navbar-brand
@@ -134,17 +156,6 @@ a
 .navbar-default
   background-color: $primary-color
   border: 0
-
-.toggleshortcut
-  width: 100%
-  height: 4px
-  background-color: $blue
-  .shortcut
-    width: 43px
-    height: 37px
-    margin-right: 15px
-    border-radius: 6px
-    background: url(/images/logo_white.png) no-repeat center center $blue
 
 // NAVIGATION END
 
@@ -355,6 +366,47 @@ $buttoncolor: #42a2e9
   font-size: 14px
   font-family: $font-regular
 
+.wrapperforviewall
+  width: 286px
+  margin-top: 44px
+  -webkit-border-radius: 6px
+  -moz-border-radius: 6px
+  -ms-border-radius: 6px
+  -o-border-radius: 6px
+  border-radius: 6px
+  border: 6px solid #e0e7ec
+
+.btn-viewall
+  line-height: 40px
+  height: 58px
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  -ms-border-radius: 3px
+  -o-border-radius: 3px
+  border-radius: 3px
+  border: 0px solid transparent
+  text-transform: uppercase
+  font-size: 28px
+  -webkit-text-shadow: 1px 1px 1px black
+  -moz-text-shadow: 1px 1px 1px black
+  -ms-text-shadow: 1px 1px 1px black
+  -o-text-shadow: 1px 1px 1px black
+  text-shadow: 1px 1px 1px black
+  font-family: $font-semibold
+  background: #42a2e9
+  background: -moz-linear-gradient(top,  #42a2e9 0%, #00518d 100%)
+  background: -webkit-linear-gradient(top,  #42a2e9 0%,#00518d 100%)
+  background: linear-gradient(to bottom,  #42a2e9 0%,#00518d 100%)
+  &:hover
+    background: #91bb44
+    background: -moz-linear-gradient(top,  #91bb44 0%, #658d1b 100%)
+    background: -webkit-linear-gradient(top,  #91bb44 0%,#658d1b 100%)
+    background: linear-gradient(to bottom,  #91bb44 0%,#658d1b 100%)
+
 @media(max-width: 768px)
   .even img, .uneven img
     float: none
+
+// NEWS END
+
+// GALLERY BEGINE

@@ -18,6 +18,11 @@
   src: url("/fonts/Lato/Lato-Hairline.ttf");
 }
 
+@font-face {
+  font-family: 'Lato-Semibold';
+  src: url("/fonts/Lato/Lato-Semibold.ttf");
+}
+
 body {
   font-size: 16px;
   min-width: 320px;
@@ -64,13 +69,28 @@ a {
 #drawer-top {
   font-family: "Lato-Light", "Open Sans";
   position: fixed;
-  top: 0;
-  margin-top: -120px;
-  background: #fff;
   width: 100%;
   height: 120px;
+  margin-top: 0;
   padding: 0;
   z-index: 999;
+}
+
+.toggleshortcut {
+  top: 120;
+  position: fixed;
+  width: 100%;
+  height: 4px;
+  background-color: #42a2e5;
+  z-index: 999;
+}
+
+.toggleshortcut .shortcut {
+  width: 43px;
+  height: 37px;
+  margin-right: 15px;
+  border-radius: 6px;
+  background: url(/images/logo_white.png) no-repeat center center #42a2e5;
 }
 
 @media (max-width: 992px) {
@@ -99,10 +119,8 @@ a {
     height: 60px;
     top: 0;
     margin-top: 0;
-    background: #fff;
     width: 100%;
     padding: 0;
-    z-index: 999;
   }
   .shortcut {
     display: none;
@@ -110,6 +128,9 @@ a {
 }
 
 @media (min-width: 768px) {
+  #wrapper {
+    margin-top: 120px;
+  }
   nav {
     height: 120px;
   }
@@ -159,20 +180,6 @@ a {
 .navbar-default {
   background-color: #fff;
   border: 0;
-}
-
-.toggleshortcut {
-  width: 100%;
-  height: 4px;
-  background-color: #42a2e5;
-}
-
-.toggleshortcut .shortcut {
-  width: 43px;
-  height: 37px;
-  margin-right: 15px;
-  border-radius: 6px;
-  background: url(/images/logo_white.png) no-repeat center center #42a2e5;
 }
 
 #top {
@@ -452,6 +459,47 @@ section .circle .circlechild .i {
   background-color: #42a2e9;
   font-size: 14px;
   font-family: "Lato-Regular";
+}
+
+.wrapperforviewall {
+  width: 286px;
+  margin-top: 44px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  border: 6px solid #e0e7ec;
+}
+
+.btn-viewall {
+  line-height: 40px;
+  height: 58px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  border: 0px solid transparent;
+  text-transform: uppercase;
+  font-size: 28px;
+  -webkit-text-shadow: 1px 1px 1px black;
+  -moz-text-shadow: 1px 1px 1px black;
+  -ms-text-shadow: 1px 1px 1px black;
+  -o-text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 1px black;
+  font-family: "Lato-Semibold";
+  background: #42a2e9;
+  background: -moz-linear-gradient(top, #42a2e9 0%, #00518d 100%);
+  background: -webkit-linear-gradient(top, #42a2e9 0%, #00518d 100%);
+  background: linear-gradient(to bottom, #42a2e9 0%, #00518d 100%);
+}
+
+.btn-viewall:hover {
+  background: #91bb44;
+  background: -moz-linear-gradient(top, #91bb44 0%, #658d1b 100%);
+  background: -webkit-linear-gradient(top, #91bb44 0%, #658d1b 100%);
+  background: linear-gradient(to bottom, #91bb44 0%, #658d1b 100%);
 }
 
 @media (max-width: 768px) {
