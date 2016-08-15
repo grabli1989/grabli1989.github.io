@@ -507,3 +507,225 @@ section .circle .circlechild .i {
     float: none;
   }
 }
+
+.scrolltoup {
+  display: none;
+  right: 25px;
+  bottom: 200px;
+  cursor: pointer;
+  background-color: #f8f8f8;
+  position: fixed;
+  text-align: center;
+  border: 1px solid #bab9b9;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.39);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.39);
+  width: 82px;
+  height: 82px;
+  z-index: 9999;
+}
+
+.scrolltoup:hover {
+  background-color: #f8f8f8;
+  -webkit-box-shadow: 2px 3px 4px 2px rgba(0, 0, 0, 0.39);
+  box-shadow: 2px 3px 4px 2px rgba(0, 0, 0, 0.39);
+}
+
+.scrolltoup:active {
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.39);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.39);
+}
+
+.scrolltoup .i {
+  position: relative;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  color: #bab9b9;
+}
+
+#gallery {
+  margin-top: 50px;
+}
+
+#gallery section {
+  background: #ffffff;
+  background: -moz-linear-gradient(top, #ffffff 10%, #f0f0f0 100%);
+  background: -webkit-linear-gradient(top, #ffffff 10%, #f0f0f0 100%);
+  background: linear-gradient(to bottom, #ffffff 10%, #f0f0f0 100%);
+}
+
+#gallery section p {
+  text-transform: uppercase;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+#gallery section ul.links {
+  margin: 0 auto;
+  text-transform: uppercase;
+  color: #4a4a4a;
+}
+
+#gallery section ul.links li.galleryicons {
+  font-size: 20px;
+  display: inline-block;
+  padding: 25px 0;
+  color: #989898;
+}
+
+#gallery section ul.links li.galleryicons span.separator {
+  font-size: 20px;
+  color: #989898;
+}
+
+@media (max-width: 768px) {
+  #gallery section ul.links li.galleryicons {
+    display: block;
+  }
+  #gallery section ul.links li.galleryicons .separator {
+    display: none;
+  }
+}
+
+#gallery section ul.links li.galleryicons a {
+  font-size: 20px;
+  font-family: "Lato-Regular";
+  color: #989898;
+}
+
+#gallery section ul.links li.galleryicons a:focus, #gallery section ul.links li.galleryicons a:active {
+  text-decoration: none;
+}
+
+#gallery section ul.links li.galleryicons a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #42a2e5;
+}
+
+.galleryicons.iconforwebdesign:hover ~ .galleryicon {
+  background: url(/images/iconforwebdesign.png) no-repeat center bottom #fff;
+  display: block;
+  height: 100px;
+}
+
+.galleryicons.iconformakeup:hover ~ .galleryicon {
+  background: url(/images/iconformakeup.png) no-repeat center bottom #fff;
+  display: block;
+  height: 98px;
+}
+
+.galleryicons.iconforprogramming:hover ~ .galleryicon {
+  background: url(/images/iconforprogramming.png) no-repeat center bottom #fff;
+  height: 145px;
+  display: block;
+}
+
+.galleryicons.iconforseo:hover ~ .galleryicon {
+  background: url(/images/iconforseo.png) no-repeat center bottom #fff;
+  height: 98px;
+  display: block;
+}
+
+.galleryicon {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 165px;
+  height: 170px;
+  display: none;
+  z-index: -3;
+}
+
+.drop-shadow {
+  position: relative;
+  background: #fff;
+  -webkit-box-shadow: 0 3px 0px -2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 0px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 0px -2px rgba(0, 0, 0, 0.1);
+}
+
+.drop-shadow:before, .drop-shadow:after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+}
+
+.curved:before {
+  top: 10px;
+  bottom: 10px;
+  left: 0;
+  right: 50%;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  -moz-border-radius: 10px / 100px;
+  border-radius: 10px / 100px;
+}
+
+.curved-hz-1:before {
+  top: 50%;
+  bottom: 0;
+  left: 40%;
+  right: 40%;
+  -moz-border-radius: 100px / 30px;
+  border-radius: 100px / 30px;
+}
+
+.grid {
+  color: #000;
+  margin-top: 100px;
+  height: 900px;
+}
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.element-item {
+  margin: 17px;
+  position: relative;
+  float: left;
+  width: 213px;
+  height: 213px;
+}
+
+.element-item a.zoom {
+  position: absolute;
+  width: 213px;
+  height: 213px;
+  background-position: top;
+  background-color: transparent;
+  left: 0;
+  top: 0;
+}
+
+.element-item a.zoom:hover {
+  background-color: rgba(0, 0, 0, 0.66);
+}
+
+.element-item a.zoom:hover .i {
+  display: block;
+}
+
+.element-item a.zoom .i {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.66);
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+}
+
+.element-item a.zoom .i i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

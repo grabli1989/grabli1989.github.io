@@ -40,7 +40,6 @@ body
   color: $primary-color
   height: 5000px
 
-
 p, h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6
   font-family: $font-stack
@@ -108,10 +107,8 @@ a
     height: 60px
     top: 0
     margin-top: 0
-    // background: $primary-color
     width: 100%
     padding: 0
-    // z-index: 999
 
   .shortcut
     display: none
@@ -409,4 +406,210 @@ $buttoncolor: #42a2e9
 
 // NEWS END
 
+.scrolltoup
+  display: none
+  right: 25px
+  bottom: 200px
+  cursor: pointer
+  background-color: #f8f8f8
+  position: fixed
+  text-align: center
+  border: 1px solid #bab9b9
+  border-radius: 50%
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,.39)
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,.39)
+  width: 82px
+  height: 82px
+  z-index: 9999
+  &:hover
+    background-color: #f8f8f8
+    -webkit-box-shadow: 2px 3px 4px 2px rgba(0,0,0,.39)
+    box-shadow: 2px 3px 4px 2px rgba(0,0,0,.39)
+  &:active
+    -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,.39)
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.39)
+  .i
+    position: relative
+    left: 50%
+    top: 45%
+    transform: translate(-50%,-50%)
+    color: #bab9b9
+
+
 // GALLERY BEGINE
+#gallery
+  margin-top: 50px
+  section
+    background: #ffffff
+    background: -moz-linear-gradient(top,  #ffffff 10%, #f0f0f0 100%)
+    background: -webkit-linear-gradient(top,  #ffffff 10%,#f0f0f0 100%)
+    background: linear-gradient(to bottom,  #ffffff 10%,#f0f0f0 100%)
+    p
+      text-transform: uppercase
+      text-align: center
+      color: #4a4a4a
+    ul.links
+      margin: 0 auto
+      text-transform: uppercase
+      color: #4a4a4a
+      li.galleryicons
+        font-size: 20px
+        display: inline-block
+        padding: 25px 0
+        color: #989898
+        span.separator
+          font-size: 20px
+          color: #989898
+        @media(max-width: 768px)
+          display: block
+          .separator
+            display: none
+        a
+          font-size: 20px
+          font-family: $font-regular
+          color: #989898
+          &:focus, &:active
+            text-decoration: none
+        a:hover
+          cursor: pointer
+          text-decoration: underline
+          color: $blue
+
+.galleryicons
+  &.iconforwebdesign:hover~.galleryicon
+    background: url(/images/iconforwebdesign.png) no-repeat center bottom #fff
+    display: block
+    height: 100px
+  &.iconformakeup:hover~.galleryicon
+    background: url(/images/iconformakeup.png) no-repeat center bottom #fff
+    display: block
+    height: 98px
+  &.iconforprogramming:hover~.galleryicon
+    background: url(/images/iconforprogramming.png) no-repeat center bottom #fff
+    height: 145px
+    display: block
+  &.iconforseo:hover~.galleryicon
+    background: url(/images/iconforseo.png) no-repeat center bottom #fff
+    height: 98px
+    display: block
+.galleryicon
+  position: absolute
+  left: 50%
+  transform: translate(-50%,-50%)
+  width: 165px
+  height: 170px
+  display: none
+  z-index: -3
+
+// DROP-SHADOW
+
+.drop-shadow
+  position: relative
+  background: #fff
+  -webkit-box-shadow: 0 3px 0px -2px rgba(0, 0, 0, 0.1)
+  -moz-box-shadow: 0 3px 0px -2px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 3px 0px -2px rgba(0, 0, 0, 0.1)
+  &:before, &:after
+    content: ""
+    position: absolute
+    z-index: -2
+
+.curved:before
+  top: 10px
+  bottom: 10px
+  left: 0
+  right: 50%
+  -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.3)
+  -moz-box-shadow: 0 0 8px rgba(0,0,0,0.3)
+  box-shadow: 0 0 8px rgba(0,0,0,0.3)
+  -moz-border-radius: 10px / 100px
+  border-radius: 10px / 100px
+.curved-hz-1:before
+  top: 50%
+  bottom: 0
+  left: 40%
+  right: 40%
+  -moz-border-radius: 100px / 30px
+  border-radius: 100px / 30px
+
+// ISOTOPE
+
+.grid
+  color: #000
+  margin-top: 100px
+  height: 900px
+  &:after
+    content: ''
+    display: block
+    clear: both
+
+.element-item
+  margin: 17px
+  position: relative
+  float: left
+  width: 213px
+  height: 213px
+  a.zoom
+    position: absolute
+    width: 213px
+    height: 213px
+    background-position: top
+    background-color: rgba(0,0,0,0)
+    left: 0
+    top: 0
+    &:hover
+      background-color: rgba(0,0,0,.66)
+      .i
+        display: block
+    .i
+      display: none
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+      background-color: rgba(255,255,255,.66)
+      width: 62px
+      height: 62px
+      border-radius: 50%
+      i
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+
+
+
+
+
+
+
+
+
+
+  // .i
+    // position: absolute
+    // left: 50%
+    // top: 50%
+    // transform: translate(-50%,-50%)
+    // background-color: rgba(255,255,255,.66)
+    // width: 62px
+    // height: 62px
+    // border-radius: 50%
+  //   a .i
+  //     display: none
+    // i
+    //   position: absolute
+    //   left: 50%
+    //   top: 50%
+    //   transform: translate(-50%,-50%)
+  // .zoom
+  //   top: 0
+  //   position: absolute
+  //   background-color: rgba(0,0,0,0)
+  //   background-position: top
+  //   width: 213px
+  //   height: 213px
+  //   &:hover
+  //     background-color: rgba(0,0,0,.66)
+  //   &+a .i
+  //     display: block

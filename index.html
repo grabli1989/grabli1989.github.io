@@ -68,6 +68,9 @@
     <!-- #drawer-top -->
 
     <div id="wrapper">
+      <div class="scrolltoup">
+        <div class="i"><i class="fa fa-chevron-up fa-3x" aria-hidden="true"></i></div>
+      </div>
         <div id="top" class="content-block">
           <div class="cross toggleshortcut">
             <a class="toggleDrawer" href="#">
@@ -228,7 +231,7 @@
                         <p class="h1 text-center">Новости</p>
                     </header>
                     <section>
-                        <div class="container">
+                      <div class="container">
                               <div class="uneven clearfix">
                                 <img src="images/newspreviewimg.png" alt="newspreviewpng" class="img-responsive center-block text-center">
                                 <div class="news">
@@ -263,8 +266,102 @@
                                 </div>
                               </div>
                             </div>
+                      </div>
                     </section>
+        </div>
 
+        <div id="gallery" class="content-block">
+          <header class="block-heading clearfix">
+              <div class="logo">
+                  <div class="line">
+                      <hr>
+                  </div>
+              </div>
+          </header>
+          <section class="drop-shadow curved curved-hz-1">
+            <p class="h1">Галерея</p>
+            <div class="container">
+              <div class="row text-center">
+                  <ul id="filters" class="links list-unstyled button-group">
+                    <li class="galleryicons iconforwebdesign">
+                      <a class="button" data-filter=".webdesign">веб-дизайн</a><span class="separator">&nbsp;&#47;&#47;&nbsp;</span>
+                    </li>
+                    <li class="galleryicons iconformakeup">
+                      <a data-filter=".makeup">верстка</a><span class="separator">&nbsp;&#47;&#47;&nbsp;</span>
+                    </li>
+                    <li class="galleryicons iconforprogramming">
+                      <a data-filter=".programming">программирование</a><span class="separator">&nbsp;&#47;&#47;&nbsp;</span>
+                    </li>
+                    <li class="galleryicons iconforseo">
+                      <a data-filter=".seo">продвижение</a>
+                    </li>
+                    <li class="galleryicon"></li>
+                  </ul>
+              </div>
+            </div>
+          </section>
+
+            <div class="container">
+              <div class="row">
+                <div class="grid">
+
+
+                  <div class="element-item webdesign">
+                    <img src="http://lorempixel.com/213/213/sports/1" alt="lorem">
+                    <a href="#" class="zoom">
+                      <div class="i">
+                        <i class="fa fa-search-plus fa-2x" aria-hidden="true"></i>
+                      </div>
+                    </a>
+                  </div>
+
+                  <div class="element-item webdesign"><img src="http://lorempixel.com/213/213/sports/2" alt="lorem"><a href="#" class="zoom">
+                      <div class="i"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></div>
+                    </a></div>
+                  <div class="element-item webdesign"><img src="http://lorempixel.com/213/213/sports/3" alt="lorem"><a href="#" class="zoom">
+                      <div class="i"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></div>
+                    </a></div>
+                  <div class="element-item makeup"><img src="http://lorempixel.com/213/213/sports/8" alt="lorem"><a href="#" class="zoom">
+                      <div class="i"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></div>
+                    </a></div>
+                  <div class="element-item makeup"><img src="http://lorempixel.com/213/213/sports/5" alt="lorem"><a href="#" class="zoom">
+                      <div class="i"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></div>
+                    </a></div>
+                  <div class="element-item programming"><img src="http://lorempixel.com/213/213/sports/6" alt="lorem"><a href="#" class="zoom">
+                      <div class="i"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></div>
+                    </a></div>
+                  <div class="element-item programming"><img src="http://lorempixel.com/213/213/sports/7" alt="lorem"><a href="#" class="zoom">
+                      <div class="i"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></div>
+                    </a></div>
+                  <div class="element-item programming"><img src="http://lorempixel.com/213/213/sports/8" alt="lorem"><a href="#" class="zoom">
+                      <div class="i"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></div>
+                    </a></div>
+                  <div class="element-item programming"><img src="http://lorempixel.com/213/213/sports/9" alt="lorem"><a href="#" class="zoom">
+                      <div class="i"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></div>
+                    </a></div>
+                  <div class="element-item seo"><img src="http://lorempixel.com/213/213/sports/10" alt="lorem"><a href="#" class="zoom">
+                      <div class="i"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></div>
+                    </a></div>
+                  <div class="element-item seo"><img src="http://lorempixel.com/213/213/sports/5" alt="lorem"><a href="#" class="zoom">
+                      <div class="i"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></div>
+                    </a></div>
+                  <div class="element-item seo"><img src="http://lorempixel.com/213/213/sports/5" alt="lorem"><a href="#" class="zoom">
+                      <div class="i"><i class="fa fa-search-plus fa-2x" aria-hidden="true"></i></div>
+                    </a></div>
+
+                </div>
+              </div>
+            </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4 col-md-offset-4 text-center">
+                <div id="viewall" class="wrapperforviewall">
+                  <button data-filter="*" type="button" class="btn btn-primary btn-lg btn-block btn-viewall button">Смотреть всё</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
 
         </div>
@@ -278,6 +375,7 @@
     <script src="js/jquery.actual.min.js"></script>
     <script src="js/jquery.scrollTo.min.js"></script>
     <script src="js/swiper.jquery.min.js"></script>
+    <script src="js/isotope.pkgd.min.js "></script>
     <script src="js/cbpAnimatedHeader.js"></script>
     <script src="js/script.js"></script>
 

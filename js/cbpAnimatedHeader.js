@@ -1,26 +1,18 @@
-/**
- * cbpAnimatedHeader.js v1.0.0
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- *
- * Copyright 2013, Codrops
- * http://www.codrops.com
- */
 var cbpAnimatedHeader = (function() {
 
 	var docElem = document.documentElement,
 		header = document.querySelector( '.navbar-fixed-top' ),
 		didScroll = false,
-		changeHeaderOn = 300;
+		changeHeaderOn = 120;
 		toggletime = 150;
+		scrolltoup = 900;
 
 	function init() {
 		window.addEventListener( 'scroll', function( event ) {
 			if( !didScroll ) {
 				didScroll = true;
 				setTimeout( scrollPage, 150 );
+				setTimeout( showButtonScrollToUp, 150 );
 			}
 		}, false );
 	}
@@ -30,16 +22,27 @@ var cbpAnimatedHeader = (function() {
 		if ( sy >= changeHeaderOn ) {
 						$(header).slideUp(toggletime);
 						$('.toggleshortcut').animate({"top" : "0"}, toggletime);
-						// $('.toggleshortcut').css("position" , "absolute");
+						$('#drawer-top').css("display" , "none");
     			}
 		else {
 						$(header).slideDown(toggletime);
 						$('#wrapper').animate({marginTop : 120}, toggletime);
 						$('.toggleshortcut').animate({"top" : "120"}, toggletime);
-						// $('.toggleshortcut').css("position" , "fixed");
+						$('#drawer-top').css("display" , "block");
 					}
 		didScroll = false;
 	}
+
+	function showButtonScrollToUp() {
+		var sy = scrollY();
+		if ( sy >= scrolltoup ) {
+			$('.scrolltoup').fadeIn(600);
+    }	else {
+			$('.scrolltoup').fadeOut(600);
+		}
+		didScroll = false;
+	}
+
 
 		wrapper = $('#wrapper');
 		drawerTop = $('.navbar-fixed-top');
@@ -58,29 +61,20 @@ var cbpAnimatedHeader = (function() {
 				var sy = scrollY();
 				if(display == 'none'){
 					$('.toggleshortcut').animate({"top" : "120"}, toggletime);
-					// $('.toggleshortcut').css("position" , "absolute");
+					$('#drawer-top').css("display" , "block");
 					if ( sy == 0 ) {
 						$('#wrapper').animate({marginTop : 120 }, toggletime);
 					}
 				}	else {
 						$('.toggleshortcut').animate({"top" : "0"}, toggletime);
-						// $('.toggleshortcut').css("position" , "fixed");
+						$('#drawer-top').css("display" , "none");
 						if ( sy == 0 ) {
 							$('#wrapper').animate({marginTop : -120 }, toggletime);
-							// $('#drawerTop').animate({marginTop : -120 }, toggletime);
 						}
 				}
 
 			});
 		}
-
-		// function setHeaderBackground() {
-		// 	var scrollTop = $(window).scrollTop(); // our current vertical position from the top
-		//
-		// 	if (scrollTop > 500) {
-		// 		$(drawerTop).fadeOut();
-		// 	}
-		// }
 
 		function scrollY() {
 			return window.pageYOffset || docElem.scrollTop;
@@ -92,7 +86,5 @@ var cbpAnimatedHeader = (function() {
 
 		setSlideNav();
 		init();
-		//setHeaderBackground()
-
 
 })();
