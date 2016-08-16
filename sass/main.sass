@@ -156,23 +156,19 @@ a
 
 // NAVIGATION END
 
-#top
-  height: 595px
 
-#swiper-header
-  width: 100%
-  height: 595px
-  .swiper-button-prev
-    margin-left: 5.5%
-  .swiper-button-next
-    margin-right: 5.5%
-  .swiper-wrapper
-    .slide1
-      background: url(/images/slides/slide1.png) no-repeat center center $blue
-    .slide2
-      background: url(/images/slides/slide2.png) no-repeat center center $blue
-    .slide3
-      background: url(/images/slides/slide3.png) no-repeat center center $blue
+.swiper-slide
+  max-width: 100%
+  height: auto
+  position: relative
+  display: block
+  margin: 0 auto
+
+.swiper-slide img
+  margin-right: 0
+  min-width: 981px
+  width: 100% !important
+  display: block
 
 #swiper-blogquotes
   width: 100%
@@ -240,21 +236,21 @@ a
   padding-top: 15px
   h4
     font-size: 20px
-  .logo
-    margin: 30px auto
-    width: 63px
-    height: 44px
-    background: url(/images/logo_blackandwhite.png) no-repeat center center #fff
-  .line
-    position: relative
-    padding-top: 3px
-    left: -115px
-    width: 300px
-    z-index: -99
-    hr
-      border: none
-      height: 1px
-      background-color: #ccc
+  // .logo
+  //   margin: 0 auto
+  //   width: 63px
+  //   height: 44px
+  //   background: url(/images/logo_blackandwhite.png) no-repeat center center #fff
+  // .line1
+  //   position: relative
+  //   padding-top: 3px
+  //   left: -115px
+  //   width: 300px
+  //   z-index: -99
+  //   hr
+  //     border: none
+  //     height: 1px
+  //     background-color: #ccc
   p.h1
     font-size: 60px
     padding-bottom: 15px
@@ -438,7 +434,8 @@ $buttoncolor: #42a2e9
 
 // GALLERY BEGINE
 #gallery
-  margin-top: 50px
+  // margin-top: 50px
+  padding: 50px 0
   section
     background: #ffffff
     background: -moz-linear-gradient(top,  #ffffff 10%, #f0f0f0 100%)
@@ -579,37 +576,34 @@ $buttoncolor: #42a2e9
 
 
 
+// CONTACTS
+
+.top-bottom-shadow
+  box-shadow: inset 0 45px 45px  -45px rgba(0,0,0,.5) , inset 0 -45px 45px  -45px rgba(0,0,0,.5)
+
+#contacts
+  padding: 20px 0
+  background: url(/images/contacts_background.png) #333f4e
 
 
-
-
-
-
-
-  // .i
-    // position: absolute
-    // left: 50%
-    // top: 50%
-    // transform: translate(-50%,-50%)
-    // background-color: rgba(255,255,255,.66)
-    // width: 62px
-    // height: 62px
-    // border-radius: 50%
-  //   a .i
-  //     display: none
-    // i
-    //   position: absolute
-    //   left: 50%
-    //   top: 50%
-    //   transform: translate(-50%,-50%)
-  // .zoom
-  //   top: 0
-  //   position: absolute
-  //   background-color: rgba(0,0,0,0)
-  //   background-position: top
-  //   width: 213px
-  //   height: 213px
-  //   &:hover
-  //     background-color: rgba(0,0,0,.66)
-  //   &+a .i
-  //     display: block
+.wrapperforlogo
+  padding: 25px
+  width: 100%
+  height: 100%
+  position: relative
+  top: 0
+  left: 0
+.logo_new
+  position: relative
+  width: 327px
+  height: 100%
+  margin: 0 auto
+  .line
+    width: 132px
+    height: 1
+    border-bottom: 1px solid #dbdbdb
+    float: left
+  img
+    position: relative
+    top: -22px
+    float: left
