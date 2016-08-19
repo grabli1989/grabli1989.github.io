@@ -28,15 +28,14 @@ body {
   min-width: 320px;
   position: relative;
   line-height: 1.4;
-  font-family: "Lato-Light", "Open Sans";
+  font-family: "Lato-Light";
   overflow-x: hidden;
   color: #fff;
-  height: 5000px;
 }
 
 p, h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Lato-Light", "Open Sans";
+  font-family: "Lato-Light";
 }
 
 h1, .h1 {
@@ -67,7 +66,7 @@ a {
 }
 
 #drawer-top {
-  font-family: "Lato-Light", "Open Sans";
+  font-family: "Lato-Light";
   position: fixed;
   width: 100%;
   height: 120px;
@@ -291,7 +290,7 @@ a {
 .block-heading p.h1 {
   font-size: 60px;
   padding-bottom: 15px;
-  font-family: "Lato-Light", "Open Sans";
+  font-family: "Lato-Light";
 }
 
 .block-heading p {
@@ -701,7 +700,27 @@ section .circle .circlechild .i {
 
 #contacts {
   padding: 20px 0;
-  background: url(/images/contacts_background.png) #333f4e;
+  background: url(/images/contacts_background.png);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#contacts .caption {
+  color: #fff;
+}
+
+.leftcolumn img.brand2 {
+  margin-bottom: 64px;
+}
+
+.leftcolumn p {
+  color: #d8dfe8;
+  font-size: 24px;
+  font-family: "Lato-Regular";
+}
+
+.leftcolumn p b {
+  color: #fefefe;
+  font-family: "Lato-Semibold";
 }
 
 .wrapperforlogo {
@@ -731,4 +750,135 @@ section .circle .circlechild .i {
   position: relative;
   top: -22px;
   float: left;
+}
+
+#contact_form input, #contact_form textarea {
+  font-size: 16px;
+  font-family: "Lato-Regular";
+  border: 0;
+  -webkit-opacity: .5;
+  -moz-opacity: .5;
+  -ms-opacity: .5;
+  -o-opacity: .5;
+  opacity: .5;
+  -webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3), inset 2px 2px 4px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3), inset 2px 2px 4px 2px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+}
+
+#contact_form input::-webkit-input-placeholder, #contact_form textarea::-webkit-input-placeholder {
+  color: #000;
+  font-family: "Lato-Regular";
+}
+
+#contact_form input::-moz-placeholder, #contact_form textarea::-moz-placeholder {
+  color: #000;
+  font-family: "Lato-Regular";
+}
+
+#contact_form input:-moz-placeholder, #contact_form textarea:-moz-placeholder {
+  color: #000;
+  font-family: "Lato-Regular";
+}
+
+#contact_form input::-ms-input-placeholder, #contact_form textarea::-ms-input-placeholder {
+  color: #000;
+  font-family: "Lato-Regular";
+}
+
+#contact_form input:-ms-input-placeholder, #contact_form textarea:-ms-input-placeholder {
+  color: #000;
+  font-family: "Lato-Regular";
+}
+
+#contact_form input {
+  height: 49px;
+  color: #000;
+}
+
+#contact_form .wrapper:before {
+  opacity: .5;
+  padding: 3px;
+  font-size: 2em;
+  font-family: 'FontAwesome';
+  position: absolute;
+  right: 5%;
+}
+
+#contact_form #name.wrapper:before {
+  content: "\f007";
+}
+
+#contact_form #tel.wrapper:before {
+  content: "\f095";
+}
+
+#contact_form #email.wrapper:before {
+  content: "\f0e0";
+}
+
+#contact_form #skype.wrapper:before {
+  content: "\f17e";
+}
+
+#contact_form #message.wrapper:before {
+  content: "\f040";
+}
+
+#contact_form textarea {
+  height: 98px;
+}
+
+#contact_submit_button.wrapperforsubmit {
+  position: relative;
+  width: 274px;
+  margin: 21px auto 0 auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  border: 6px solid rgba(0, 0, 0, 0.1);
+}
+
+#contact_submit_button.wrapperforsubmit .btn-submit {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 40px;
+  height: 58px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  border: 0px solid transparent;
+  text-transform: uppercase;
+  font-size: 28px;
+  -webkit-text-shadow: 1px 1px 1px black;
+  -moz-text-shadow: 1px 1px 1px black;
+  -ms-text-shadow: 1px 1px 1px black;
+  -o-text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 1px black;
+  font-family: "Lato-Semibold";
+  background: #6ed258;
+  background: -moz-linear-gradient(top, #6ed258 0%, #34ae22 100%);
+  background: -webkit-linear-gradient(top, #6ed258 0%, #34ae22 100%);
+  background: linear-gradient(to bottom, #6ed258 0%, #34ae22 100%);
+}
+
+#contact_submit_button.wrapperforsubmit .btn-submit:hover {
+  background: #42a2e9;
+  background: -moz-linear-gradient(top, #42a2e9 0%, #00518d 100%);
+  background: -webkit-linear-gradient(top, #42a2e9 0%, #00518d 100%);
+  background: linear-gradient(to bottom, #42a2e9 0%, #00518d 100%);
+}
+
+#map {
+  width: 100%;
+  height: 400px;
 }

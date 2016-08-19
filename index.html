@@ -372,6 +372,7 @@
         <!-- gallery -->
 
         <div id="contacts" class="top-bottom-shadow content-block">
+          <div class="frontground"></div>
           <header class="block-heading clearfix">
 
               <div class="wrapperforlogo">
@@ -382,16 +383,64 @@
                 </div>
               </div>
 
-              <p class="h1">Контактная информация</p>
+              <p class="h1 caption">Контактная форма</p>
           </header>
           <section>
             <div class="container">
+              <div class="col-md-6 leftcolumn">
+                <img class="brand2" src="/images/brand_2.png" alt="brand">
+                <p><b>E-mail: </b>andreyvalerievich1@gmail.com</p>
+                <p><b>Skype: </b>andrey_57</p>
+                <p><b>Телефон: </b>+3 8(063) 165-37-47</p></div>
+              <div class="col-md-6">
 
+                <form id="contact_form">
+                  <div class="form-group">
+                    <p id="name" class="wrapper"><input type="name" class="form-control" id="contact_name" placeholder="Имя"></p>
+                  </div>
+                  <div class="form-group">
+                    <p id="tel" class="wrapper"><input type="tel" class="form-control" id="contact_tel" placeholder="Телефон"></p>
+                  </div>
+                  <div class="form-group">
+                    <p id="email" class="wrapper"><input type="email" class="form-control" id="contact_email" placeholder="Email"></p>
+                  </div>
+                  <div class="form-group">
+                    <p id="skype" class="wrapper"><input type="skype" class="form-control" id="contact_skype" placeholder="Skype"></p>
+                  </div>
+
+                  <div class="form-group">
+                    <p id="message" class="wrapper"><textarea class="form-control" id="contact_message" rows="3" placeholder="Ваше сообщение"></textarea></p>
+                  </div>
+
+                  <div id="contact_submit_button" class="wrapperforsubmit">
+                    <button type="button" class="btn btn-primary btn-lg btn-submit btn-block">Отправить</button>
+                  </div>
+                </form>
+
+              </div>
             </div>
           </section>
 
         </div>
+        <!-- contacts -->
 
+        <div id="googlemap" class="content-block">
+          <div id="map"></div>
+
+          <script>
+            function initMap() {
+              var mapDiv = document.getElementById('map');
+              var map = new google.maps.Map(mapDiv, {
+                  center: {lat: 44.540, lng: -78.546},
+                  zoom: 8
+              });
+            }
+          </script>
+
+          <script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCClvtolz12Nv7lc_nR9hFGlCgID0wsumI&callback=initMap">
+          </script>
+        </div>
 
     </div>
     <!-- wrapper -->
@@ -405,7 +454,6 @@
     <script src="js/isotope.pkgd.min.js "></script>
     <script src="js/cbpAnimatedHeader.js"></script>
     <script src="js/script.js"></script>
-
     <script>
         var mySwiper = new Swiper('#swiper-header', {
             // Optional parameters
