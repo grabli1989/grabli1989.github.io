@@ -5,7 +5,7 @@ var cbpAnimatedHeader = (function() {
 		didScroll = false,
 		changeHeaderOn = 120;
 		toggletime = 150;
-		scrolltoup = 900;
+		scrolltoup = 600;
 
 	function init() {
 		window.addEventListener( 'scroll', function( event ) {
@@ -35,7 +35,7 @@ var cbpAnimatedHeader = (function() {
 
 	function showButtonScrollToUp() {
 		var sy = scrollY();
-		if ( sy >= scrolltoup ) {
+		if ( sy >= scrolltoup && screen.width > 992 ) {
 			$('.scrolltoup').fadeIn(600);
     }	else {
 			$('.scrolltoup').fadeOut(600);
@@ -69,7 +69,7 @@ var cbpAnimatedHeader = (function() {
 						$('.toggleshortcut').animate({"top" : "0"}, toggletime);
 						$('#drawer-top').css("display" , "none");
 						if ( sy == 0 ) {
-							$('#wrapper').animate({marginTop : -120 }, toggletime);
+							$('#wrapper').animate({marginTop : -0 }, toggletime);
 						}
 				}
 

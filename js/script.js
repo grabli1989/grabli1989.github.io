@@ -1,6 +1,6 @@
 (function(){
 	$('.scrolltoup').click(function() {
-    $.scrollTo('#wrapper',500);
+    $.scrollTo('#drawer-top',500);
   });
 
 	var $grid = $('.grid').isotope({

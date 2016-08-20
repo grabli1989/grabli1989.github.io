@@ -42,13 +42,72 @@ body
 p, h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6
   font-family: $font-stack
-  // color: $primary-color
 
-h1, .h1
-  font-size: 56px
 a
   color: #333
   text-decoration: none
+
+h1.caption
+  color: #222222
+  text-transform: uppercase
+  text-align: center
+  font-size: 60px
+@media(max-width:768px)
+  h1.caption
+    font-size: 24px
+
+.wrapperforlogo
+  padding: 25px
+  width: 100%
+  height: 100%
+  position: relative
+  top: 0
+  left: 0
+.logo_new
+  position: relative
+  width: 327px
+  height: 100%
+  margin: 0 auto
+  .line
+    width: 132px
+    height: 1
+    border-bottom: 1px solid #dbdbdb
+    float: left
+  img
+    &.normal
+      position: relative
+      top: -22px
+      float: left
+    &.mini
+      display: none
+@media(max-width:768px)
+  .wrapperforlogo
+    padding: 10px 25px 6px 25px
+    width: 100%
+    height: 100%
+    position: relative
+    top: 0
+    left: 0
+  .logo_new
+    position: relative
+    width: 223px
+    height: 100%
+    margin: 0 auto
+    .line
+      width: 79px
+      height: 1
+      border-bottom: 1px solid #dbdbdb
+      float: left
+    img
+      float: left
+      &.normal
+        display: none
+      &.mini
+        position: relative
+        top: -13px
+        display: block
+
+
 // NAVIGATION BEGINE
 .navbar-default .navbar-nav li a:hover
   color: $green
@@ -73,7 +132,7 @@ a
 
 
 .toggleshortcut
-  top: 120
+  top: 120px
   position: fixed
   width: 100%
   height: 4px
@@ -87,11 +146,6 @@ a
     background: url(/images/logo_white.png) no-repeat center center $blue
 
 @media(max-width: 992px)
-  .navbar-brand
-    width: 64px
-    height: 64px
-    background: url(/images/logo.png) no-repeat
-    background-position: center center
   .navbar-nav li a
     padding: 15px 5px
   .navbar .divider-vertical
@@ -108,20 +162,23 @@ a
     margin-top: 0
     width: 100%
     padding: 0
-
   .shortcut
     display: none
+  nav
+    height: 110px
+
+nav
+  .navbar-brand
+    width: 208px
+    height: 120px
+    background: url(/images/brand.png) no-repeat
+    background-position: center center
 
 @media(min-width: 768px)
   #wrapper
     margin-top: 120px
   nav
     height: 120px
-  .navbar-brand
-    width: 208px
-    height: 120px
-    background: url(/images/brand.png) no-repeat
-    background-position: center center
   .navbar-nav li a
     line-height: 85px
   .navbar-centered .navbar-nav
@@ -164,10 +221,15 @@ a
   margin: 0 auto
 
 .swiper-slide img
-  margin-right: 0
+  overflow-x:
+  margin: 0 auto
   min-width: 981px
-  width: 100% !important
+  width: 100%
   display: block
+
+@media(max-width:768px)
+  .swiper-button-prev, .swiper-button-next
+    display: none
 
 #swiper-blogquotes
   width: 100%
@@ -235,25 +297,6 @@ a
   padding-top: 15px
   h4
     font-size: 20px
-  // .logo
-  //   margin: 0 auto
-  //   width: 63px
-  //   height: 44px
-  //   background: url(/images/logo_blackandwhite.png) no-repeat center center #fff
-  // .line1
-  //   position: relative
-  //   padding-top: 3px
-  //   left: -115px
-  //   width: 300px
-  //   z-index: -99
-  //   hr
-  //     border: none
-  //     height: 1px
-  //     background-color: #ccc
-  p.h1
-    font-size: 60px
-    padding-bottom: 15px
-    font-family: $font-stack
   p
     text-transform: uppercase
     text-align: center
@@ -261,58 +304,85 @@ a
     font-size: 20px
     font-family: $font-regular
 
-.welcome p
-  color: #5e5e5e
-  font-family: $font-medium
-  font-size: 13.5px
+.welcome
+  p
+    color: #5e5e5e
+    font-family: $font-medium
+    font-size: 13.5px
+    padding: 0 15px
+  .captiontext
+    text-align: center
+    text-transform: uppercase
+    font-family: $font-regular
+    color: #222
 
 #services
   margin-top: 75px
-  header h3
+  p.caption
     font-size: 26px
     text-transform: uppercase
     color: #5e5e5e
-  section
-    p
-      color: #5e5e5e
-      font-size: 13.5px
-      font-family: $font-regular
-      padding-bottom: 60px
+  p.description
+    color: #5e5e5e
+    font-size: 13.5px
+    font-family: $font-regular
+    padding-bottom: 60px
+
   div
     text-align: center
 
-section .circle
-  text-align: center
-  border-radius: 100px
-  display: inline-block
-  width: 140px
-  height: 140px
-  border: 5px solid $blue
-  &:hover
-    border-color: $green
-  .circlechild
-    border-radius: 100px
-    margin: 5px 0 0 0
-    width: 120px
-    height: 120px
+@media(max-width:768px)
+  .welcome
+    .captiontext
+      display: none
+#services
+  margin-top: 0
+  p
+    &.caption
+      font-size: 14px
+    &.description
+      display: none
+
+  .circle
+    position: relative
+    width: 100%
+    max-width: 140px
+    text-align: center
+    border-radius: 50%
     display: inline-block
-    background-color: $blue
+    border: 4px solid $blue
+    &:after
+      content: ""
+      display: block
+      padding-bottom: 100%
     &:hover
-      background-color: $green
-    .i
-      position: relative
+      border-color: $green
+    .circlechild
+      position: absolute
       left: 50%
       top: 50%
       transform: translate(-50%,-50%)
-
-.circle.lite
-  border: 5px solid $bluelight
-  &:hover
-    border-color: $greenlight
-  .circlechild
-    background-color: $bluelight
+      border-radius: 100px
+      width: 92%
+      height: 92%
+      display: inline-block
+      background-color: $blue
+      &:hover
+        background-color: $green
+      .i
+        font-size: 6rem
+        position: relative
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+  .circle.lite
+    border: 4px solid $bluelight
     &:hover
-      background-color: $greenlight
+      border-color: $greenlight
+    .circlechild
+      background-color: $bluelight
+      &:hover
+        background-color: $greenlight
 
 
 
@@ -409,27 +479,16 @@ $buttoncolor: #42a2e9
   background-color: #f8f8f8
   position: fixed
   text-align: center
-  border: 1px solid #bab9b9
   border-radius: 50%
-  -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,.39)
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,.39)
   width: 82px
   height: 82px
   z-index: 9999
-  &:hover
-    background-color: #f8f8f8
-    -webkit-box-shadow: 2px 3px 4px 2px rgba(0,0,0,.39)
-    box-shadow: 2px 3px 4px 2px rgba(0,0,0,.39)
-  &:active
-    -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,.39)
-    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.39)
   .i
     position: relative
     left: 50%
     top: 45%
     transform: translate(-50%,-50%)
     color: #bab9b9
-
 
 // GALLERY BEGINE
 #gallery
@@ -582,42 +641,18 @@ $buttoncolor: #42a2e9
   padding: 20px 0
   background: url(/images/contacts_background.png)
   border: 1px solid rgba(255,255,255,.5)
-  .caption
-    color: #fff
 
 
-.leftcolumn
-  img.brand2
-    margin-bottom: 64px
-  p
-    color: #d8dfe8
-    font-size: 24px
-    font-family: $font-regular
-    b
-      color: #fefefe
-      font-family: $font-semibold
-
-.wrapperforlogo
-  padding: 25px
-  width: 100%
-  height: 100%
-  position: relative
-  top: 0
-  left: 0
-.logo_new
-  position: relative
-  width: 327px
-  height: 100%
-  margin: 0 auto
-  .line
-    width: 132px
-    height: 1
-    border-bottom: 1px solid #dbdbdb
-    float: left
-  img
-    position: relative
-    top: -22px
-    float: left
+  .leftcolumn
+    img.brand2
+      margin-bottom: 64px
+    p
+      color: #d8dfe8
+      font-size: 24px
+      font-family: $font-regular
+      b
+        color: #fefefe
+        font-family: $font-semibold
 
   // CONTACT FORM
 
@@ -719,4 +754,67 @@ $buttoncolor: #42a2e9
 
 #map
   width: 100%
-  height: 400px
+  height: 670px
+
+// FOOTER
+
+footer
+  font-family: $font-stack
+  color: #e4e4e4
+  font-size: 18px
+  background: #585f68
+  height: 200px
+  padding: 65px 0
+  div .copyright
+    &.left
+      margin: 0 5px -6px 10px
+      position: absolute
+      bottom: 0
+    &.right
+      display: none
+  .socki
+    width: 100%
+    a
+      position: relative
+      text-decoration: none
+      &:hover img.socki_hover+img.socki_idle
+        opacity: 0
+      img
+        padding: 10px 10px
+        &.socki_idle
+          position: relative
+        &.socki_hover
+          left: 0
+          position: absolute
+  .footer_nav
+    padding: 0
+    ul.links
+      list-style: none
+      margin: 0
+      text-transform: uppercase
+      -webkit-padding-start: 0px
+      li
+        padding: 0 20px
+        display: inline
+        &:first-child
+          padding-left: 0
+        &:last-child
+          padding-right: 0
+@media(max-width: 992px)
+  footer
+    .wrapperforcopyright
+      position: absolute
+    height: 145px
+    padding: 30px 0
+    div .copyright
+      &.left
+        display: none
+      &.right
+        display: block
+        padding: 0 15px
+    .socki
+      top: 0
+      position: absolute
+      text-align: right
+    .footer_nav
+      display: none
