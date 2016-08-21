@@ -53,8 +53,14 @@ h1.caption
   text-align: center
   font-size: 60px
 @media(max-width:768px)
-  h1.caption
-    font-size: 24px
+  h1
+    &.caption
+      font-size: 24px
+    &.symbol
+      font-size: 6rem
+
+.block-heading
+  padding: 15px
 
 .wrapperforlogo
   padding: 25px
@@ -107,6 +113,64 @@ h1.caption
         top: -13px
         display: block
 
+.wrapperforviewall
+  width: 286px
+  margin: 49px auto
+  -webkit-border-radius: 6px
+  -moz-border-radius: 6px
+  -ms-border-radius: 6px
+  -o-border-radius: 6px
+  border-radius: 6px
+  border: 6px solid #e0e7ec
+
+.btn-viewall
+  line-height: 40px
+  height: 58px
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  -ms-border-radius: 3px
+  -o-border-radius: 3px
+  border-radius: 3px
+  border: 0px solid transparent
+  text-transform: uppercase
+  font-size: 28px
+  -webkit-text-shadow: 1px 1px 1px black
+  -moz-text-shadow: 1px 1px 1px black
+  -ms-text-shadow: 1px 1px 1px black
+  -o-text-shadow: 1px 1px 1px black
+  text-shadow: 1px 1px 1px black
+  font-family: $font-semibold
+  background: #42a2e9
+  background: -moz-linear-gradient(top,  #42a2e9 0%, #00518d 100%)
+  background: -webkit-linear-gradient(top,  #42a2e9 0%,#00518d 100%)
+  background: linear-gradient(to bottom,  #42a2e9 0%,#00518d 100%)
+  &:hover
+    background: #91bb44
+    background: -moz-linear-gradient(top,  #91bb44 0%, #658d1b 100%)
+    background: -webkit-linear-gradient(top,  #91bb44 0%,#658d1b 100%)
+    background: linear-gradient(to bottom,  #91bb44 0%,#658d1b 100%)
+@media(max-width:768px)
+  .wrapperforviewall
+    margin: 22px auto
+
+.scrolltoup
+  display: none
+  right: 25px
+  bottom: 200px
+  cursor: pointer
+  background-color: #f8f8f8
+  position: fixed
+  text-align: center
+  border-radius: 50%
+  width: 82px
+  height: 82px
+  z-index: 9999
+  .i
+    position: relative
+    left: 50%
+    top: 45%
+    transform: translate(-50%,-50%)
+    color: #bab9b9
 
 // NAVIGATION BEGINE
 .navbar-default .navbar-nav li a:hover
@@ -230,76 +294,7 @@ nav
   .swiper-button-prev, .swiper-button-next
     display: none
 
-#swiper-blogquotes
-  width: 100%
-  height: 445px
-  .swiper-button-prev
-    margin-left: 5.5%
-  .swiper-button-next
-    margin-right: 5.5%
-  .slide4
-    background: url(/images/slides/slide4.png) no-repeat center center $blue
-  .slide5
-    background: url(/images/slides/slide5.png) no-repeat center center $blue
-
-.quotes
-  margin: 70px 0
-  position: absolute
-  z-index: 99
-  color: #222222
-  background-color: rgba(255,255,255,.86)
-  width: 1000px
-  height: 315px
-  -webkit-box-shadow: -3px -3px 15px 3px rgba(11,40,58,.28)
-  box-shadow: -3px -3px 15px 3px rgba(11,40,58,.28)
-  h1
-    text-transform: uppercase
-    padding: 50px 60px 0 30px
-    color: #222222
-  p
-    padding: 0 60px 0 30px
-    font-size: 18px
-    font-family: $font-regular
-    color: #4a4a4a
-    &.quote
-      color: #969696
-      padding: 17px 44px
-      font-family: 'Arial'
-      font-weight: 900
-      font-size: 100.5px
-
-.swiper-pagination-bullet
-  width: 21px
-  height: 21px
-  border-radius: 2
-  -moz-box-shadow: 0px 0px 0px 3px rgba(255,255,255,1)
-  box-shadow: 0px 0px 0px 3px rgba(255,255,255,1)
-  display: inline-block
-  background: #fff
-  opacity: .66
-
-.swiper-pagination-bullet-active
-  width: 21px
-  height: 21px
-  -moz-box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.4)
-  box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.4)
-  opacity: 1
-
-.texttoswiper
-  width: 100%
-  height: 100%
-  position: relative
-
-.block-heading
-  padding-top: 15px
-  h4
-    font-size: 20px
-  p
-    text-transform: uppercase
-    text-align: center
-    color: #222222
-    font-size: 20px
-    font-family: $font-regular
+// WELCOME
 
 .welcome
   p
@@ -384,7 +379,96 @@ nav
 @media(max-width: 768px)
   .circle .circlechild .i
     font-size: 3em
+@media(max-width: 480px)
+  .circle .circlechild .i
+    font-size: 2em
 
+// WELCOME END
+
+// BLOGQUOTE BEGINE
+#swiper-blogquotes
+  width: 100%
+  height: 444px
+  .swiper-button-prev
+    margin-left: 5.5%
+  .swiper-button-next
+    margin-right: 5.5%
+@media(max-width:768px)
+  #swiper-blogquotes
+    height: 290px
+
+.wrapperforquotes
+  width: inherit
+  max-width: 95%
+  height: 100%
+  display: table
+  position: absolute
+  .quotes
+    display: table-cell
+    vertical-align: middle
+    .quote
+      padding: 30px 0
+      display: inline-block
+      color: #222222
+      background-color: rgba(255,255,255,.86)
+      -webkit-box-shadow: -3px -3px 15px 3px rgba(11,40,58,.28)
+      box-shadow: -3px -3px 15px 3px rgba(11,40,58,.28)
+      h1
+        &.caption
+          text-align: left
+        &.symbol
+          margin-top: 0
+          color: #969696
+          font-family: 'Arial'
+          font-weight: 900
+          font-size: 10rem
+      p
+        margin-top: -20px
+        font-size: 1.1em
+        font-family: $font-regular
+        color: #4a4a4a
+#link_readall a
+  text-decoration: underline
+  color: $blue
+
+@media(max-width:768px)
+  .wrapperforquotes .quotes .quote
+    padding: 0
+    h1
+      &.symbol
+        margin-top: 5px
+        font-size: 6rem
+      &.caption
+        font-size: 2.4em
+    p
+      font-size: 0.8em
+      margin-top: -15px
+  #link_readall a
+    font-size: 0.8em
+
+.swiper-pagination-bullet
+  width: 21px
+  height: 21px
+  border-radius: 2
+  -moz-box-shadow: 0px 0px 0px 3px rgba(255,255,255,1)
+  box-shadow: 0px 0px 0px 3px rgba(255,255,255,1)
+  display: inline-block
+  background: #fff
+  opacity: .66
+
+.swiper-pagination-bullet-active
+  width: 21px
+  height: 21px
+  -moz-box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.4)
+  box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.4)
+  opacity: 1
+
+.texttoswiper
+  width: 100%
+  height: 100%
+  position: relative
+
+// BLOGQUOTE END
 
 // NEWS BEGINE
 $newstextcolor: #4a4a4a
@@ -411,7 +495,6 @@ $buttoncolor: #42a2e9
   p.newstext
     font-size: 14px
 
-
 .uneven
   img
     float: left
@@ -428,179 +511,137 @@ $buttoncolor: #42a2e9
   font-size: 14px
   font-family: $font-regular
 
-.wrapperforviewall
-  width: 286px
-  margin-top: 44px
-  -webkit-border-radius: 6px
-  -moz-border-radius: 6px
-  -ms-border-radius: 6px
-  -o-border-radius: 6px
-  border-radius: 6px
-  border: 6px solid #e0e7ec
-
-.btn-viewall
-  line-height: 40px
-  height: 58px
-  -webkit-border-radius: 3px
-  -moz-border-radius: 3px
-  -ms-border-radius: 3px
-  -o-border-radius: 3px
-  border-radius: 3px
-  border: 0px solid transparent
-  text-transform: uppercase
-  font-size: 28px
-  -webkit-text-shadow: 1px 1px 1px black
-  -moz-text-shadow: 1px 1px 1px black
-  -ms-text-shadow: 1px 1px 1px black
-  -o-text-shadow: 1px 1px 1px black
-  text-shadow: 1px 1px 1px black
-  font-family: $font-semibold
-  background: #42a2e9
-  background: -moz-linear-gradient(top,  #42a2e9 0%, #00518d 100%)
-  background: -webkit-linear-gradient(top,  #42a2e9 0%,#00518d 100%)
-  background: linear-gradient(to bottom,  #42a2e9 0%,#00518d 100%)
-  &:hover
-    background: #91bb44
-    background: -moz-linear-gradient(top,  #91bb44 0%, #658d1b 100%)
-    background: -webkit-linear-gradient(top,  #91bb44 0%,#658d1b 100%)
-    background: linear-gradient(to bottom,  #91bb44 0%,#658d1b 100%)
-
 @media(max-width: 768px)
   .even img, .uneven img
+    width: 100%
     float: none
-
 // NEWS END
-
-.scrolltoup
-  display: none
-  right: 25px
-  bottom: 200px
-  cursor: pointer
-  background-color: #f8f8f8
-  position: fixed
-  text-align: center
-  border-radius: 50%
-  width: 82px
-  height: 82px
-  z-index: 9999
-  .i
-    position: relative
-    left: 50%
-    top: 45%
-    transform: translate(-50%,-50%)
-    color: #bab9b9
 
 // GALLERY BEGINE
 #gallery
-  // margin-top: 50px
   padding: 50px 0
-  section
+  .gradient
     background: #ffffff
     background: -moz-linear-gradient(top,  #ffffff 10%, #f0f0f0 100%)
     background: -webkit-linear-gradient(top,  #ffffff 10%,#f0f0f0 100%)
     background: linear-gradient(to bottom,  #ffffff 10%,#f0f0f0 100%)
-    p
-      text-transform: uppercase
-      text-align: center
-      color: #4a4a4a
-    ul.links
-      margin: 0 auto
-      text-transform: uppercase
-      color: #4a4a4a
-      li.galleryicons
+  p
+    text-transform: uppercase
+    text-align: center
+    color: #4a4a4a
+  ul.links
+    margin: 0 auto
+    text-transform: uppercase
+    color: #4a4a4a
+    li.galleryicons
+      font-size: 20px
+      display: inline-block
+      padding: 25px 0
+      color: #989898
+      span.separator
         font-size: 20px
-        display: inline-block
-        padding: 25px 0
         color: #989898
-        span.separator
-          font-size: 20px
-          color: #989898
         @media(max-width: 768px)
-          display: block
-          .separator
-            display: none
-        a
-          font-size: 20px
-          font-family: $font-regular
-          color: #989898
-          &:focus, &:active
-            text-decoration: none
-        a:hover
-          cursor: pointer
-          text-decoration: underline
-          color: $blue
+          font-size: 14px
+      a
+        font-size: 20px
+        font-family: $font-regular
+        color: #989898
+        @media(max-width: 768px)
+          font-size: 14px
+      a:hover, a:focus, a:active
+        cursor: pointer
+        text-decoration: none
+        color: $green
+  .galleryicon
+    border-bottom: 20px solid #fff
+    background-color: #fff
+    padding: 25px
+    position: absolute
+    left: 50%
+    transform: translate(-50%,0)
+    width: 165px
+    height: 130px
+    display: none
+    z-index: -3
+    &.default
+      background: url(../images/logo.png) no-repeat center bottom #fff
+      height: 105px
+      display: block
+      z-index: -555
+      @media(max-width: 768px)
+        height: 90px
+  .galleryicons
+    a
+      outline: -webkit-focus-ring-color auto 0px
+    &.iconforwebdesign a
+      &:hover~.galleryicon, &:active~.galleryicon, &:focus~.galleryicon
+        background: url(../images/iconforwebdesign.png) no-repeat center bottom #fff
+        height: 110px
+        display: block
+    &.iconformakeup a
+      &:hover~.galleryicon, &:active~.galleryicon, &:focus~.galleryicon
+        background: url(../images/iconformakeup.png) no-repeat center bottom #fff
+        height: 109px
+        display: block
+    &.iconforprogramming a
+      &:hover~.galleryicon, &:active~.galleryicon, &:focus~.galleryicon
+        background: url(../images/iconforprogramming.png) no-repeat center bottom #fff
+        height: 128px
+        display: block
+    &.iconforseo a
+      &:hover~.galleryicon, &:active~.galleryicon, &:focus~.galleryicon
+        background: url(../images/iconforseo.png) no-repeat center bottom #fff
+        height: 113px
+        display: block
 
-.galleryicons
-  &.iconforwebdesign:hover~.galleryicon
-    background: url(/images/iconforwebdesign.png) no-repeat center bottom #fff
-    display: block
-    height: 100px
-  &.iconformakeup:hover~.galleryicon
-    background: url(/images/iconformakeup.png) no-repeat center bottom #fff
-    display: block
-    height: 98px
-  &.iconforprogramming:hover~.galleryicon
-    background: url(/images/iconforprogramming.png) no-repeat center bottom #fff
-    height: 145px
-    display: block
-  &.iconforseo:hover~.galleryicon
-    background: url(/images/iconforseo.png) no-repeat center bottom #fff
-    height: 98px
-    display: block
-.galleryicon
-  position: absolute
-  left: 50%
-  transform: translate(-50%,-50%)
-  width: 165px
-  height: 170px
-  display: none
-  z-index: -3
-
-// DROP-SHADOW
+  // DROP-SHADOW
 
 .drop-shadow
   position: relative
-  background: #fff
-  -webkit-box-shadow: 0 3px 0px -2px rgba(0, 0, 0, 0.1)
-  -moz-box-shadow: 0 3px 0px -2px rgba(0, 0, 0, 0.1)
-  box-shadow: 0 3px 0px -2px rgba(0, 0, 0, 0.1)
+  -webkit-box-shadow: 0 3px 1px -1px rgba(0, 0, 0, 0.1)
+  -moz-box-shadow: 0 3px 1px -1px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 3px 1px -1px rgba(0, 0, 0, 0.1)
   &:before, &:after
     content: ""
     position: absolute
     z-index: -2
 
 .curved:before
-  top: 10px
+  top: 15px
   bottom: 10px
   left: 0
   right: 50%
-  -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.3)
-  -moz-box-shadow: 0 0 8px rgba(0,0,0,0.3)
-  box-shadow: 0 0 8px rgba(0,0,0,0.3)
+  -webkit-box-shadow: 0 0 10px 5px rgba(0,0,0,0.3)
+  -moz-box-shadow: 0 0 10px 5px rgba(0,0,0,0.3)
+  box-shadow: 0 0 10px 5px rgba(0,0,0,0.3)
   -moz-border-radius: 10px / 100px
   border-radius: 10px / 100px
 .curved-hz-1:before
   top: 50%
   bottom: 0
-  left: 40%
-  right: 40%
-  -moz-border-radius: 100px / 30px
-  border-radius: 100px / 30px
+  left: 100px
+  right: 100px
+  -moz-border-radius: 1000px / 10px
+  border-radius: 1000px / 10px
 
 // ISOTOPE
-
+.wrapperforgrid
+  position: relative
+  margin: 0 6px
+  @media(max-width: 992px)
+    margin: 0 0
 .grid
-  color: #000
+  position: relative
+  display: block
   margin-top: 100px
-  height: 900px
-  &:after
-    content: ''
-    display: block
-    clear: both
-
+  color: #000
+  width: 100%
+  @media(max-width: 768px)
+    margin-top: 65px
 .element-item
   margin: 17px
-  position: relative
+  position: absolute
   float: left
   width: 213px
   height: 213px
@@ -641,6 +682,16 @@ $buttoncolor: #42a2e9
   padding: 20px 0
   background: url(/images/contacts_background.png)
   border: 1px solid rgba(255,255,255,.5)
+  h1.caption
+    color: #fff
+    padding-top: 3px
+  @media(max-width: 768px)
+    padding: 16px 0
+    text-align: center
+    .wrapperforlogo .logo_new
+      width: 227px
+    .brand2
+      display: none
 
 
   .leftcolumn

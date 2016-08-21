@@ -5,17 +5,7 @@
 
 	var $grid = $('.grid').isotope({
 	  itemSelector: '.element-item',
-	  layoutMode: 'fitRows',
-	  getSortData: {
-	    name: '.name',
-	    symbol: '.symbol',
-	    number: '.number parseInt',
-	    category: '[data-category]',
-	    weight: function( itemElem ) {
-	      var weight = $( itemElem ).find('.weight').text();
-	      return parseFloat( weight.replace( /[\(\)]/g, '') );
-	    }
-	  }
+	  layoutMode: 'fitRows'
 	});
 
 	// filter functions
@@ -40,7 +30,7 @@
 	  $grid.isotope({ filter: filterValue });
 	});
 
-	$('#viewall').on( 'click', 'button', function() {
+	$('#viewall').on( 'click', 'a', function() {
 		var filterValue = $( this ).attr('data-filter');
 		// use filterFn if matches value
 		filterValue = filterFns[ filterValue ] || filterValue;
