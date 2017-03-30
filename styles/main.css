@@ -1,0 +1,195 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-family: 'Roboto','sans-serif';
+    font-size: 10px;
+    color: #9b9b9b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.flex > div {
+    flex: 1 0 100%;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.blue {
+    color: #00b8ec;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.shadow {
+    -webkit-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+.container {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 5;
+}
+
+/** MENU **/
+#heatMapsMenu {
+    width: 193px;
+    background-color: #fff;
+    z-index: 5;
+}
+
+#heatMapsMenu #heatMapsMenuHeader {
+    height: 44px;
+    border-bottom: 1px solid #cccccc;
+    padding: 0;
+}
+
+#heatMapsMenu #heatMapsMenuHeader .header {
+    padding: 10px;
+    line-height: 12px;
+}
+#heatMapsMenu #heatMapsMenuHeader .header .city-vibe {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+#heatMapsMenu #heatMapsMenuBody {
+    height: 0;
+    overflow: hidden;
+    z-index: 5;
+}
+
+#heatMapsMenu #heatMapsMenuBody ul {
+    list-style-type: none;
+}
+
+#heatMapsMenu #heatMapsMenuBody .menu-item {
+    font-size: 1.2rem;
+    cursor: pointer;
+    height: 35px;
+    line-height: 35px;
+}
+
+#heatMapsMenu #heatMapsMenuBody .menu-item {
+    text-indent: 0px;
+    -moz-transition: all 0.15s 0.1s ease-in;
+    -o-transition: all 0.15s 0.1s ease-in;
+    -webkit-transition: all 0.15s 0.1s ease-in;
+}
+
+#heatMapsMenu #heatMapsMenuBody .menu-item.hoverMenuItem {
+    background-color: #cccccc;
+}
+
+#heatMapsMenu #heatMapsMenuBody .menu-item .item {
+    width: auto;
+    float: left;
+    padding-left: 5px;
+}
+
+#heatMapsMenu #heatMapsMenuBody .menu-item .icon {
+    float: left;
+    width: 36px;
+    height: 35px;
+}
+
+#heatMapsMenu #heatMapsMenuBody .menu-item .icon img {
+}
+
+.nightlife {
+    background: url("../images/Nightlife.png") no-repeat center center;
+}
+.foodie {
+    background: url("../images/Foodie.png") no-repeat center center;
+}
+.shopping {
+    background: url("../images/Shopping.png") no-repeat center center;
+}
+.artScene {
+    background: url("../images/ArtScene.png") no-repeat center center;
+}
+.outdoors {
+    background: url("../images/Outdoors.png") no-repeat center center;
+}
+
+/** Animate menu **/
+#heatMapsMenu #heatMapsMenuBody {
+    text-indent: 0px;
+    -moz-transition: all 0.4s 0.1s ease-in;
+    -o-transition: all 0.4s 0.1s ease-in;
+    -webkit-transition: all 0.4s 0.1s ease-in;
+    /*-moz-transition: all 1s linear;*/
+    /*-o-transition: all 1s linear;*/
+    /*-webkit-transition: all 1s linear;*/
+}
+
+#heatMapsMenu #heatMapsMenuBody.isOpenMenu {
+    height: 173px;
+}
+
+.container .poweredByVibe {
+    float: right;
+    width: 80px;
+    background-color: #ffffff;
+    margin-top: 5px;
+}
+
+.container .poweredByVibe {
+    -moz-transition: all 0.4s 0.1s ease-in;
+    -o-transition: all 0.4s 0.1s ease-in;
+    -webkit-transition: all 0.4s 0.1s ease-in;
+}
+
+.container .poweredByVibe.opacity {
+    opacity: 0;
+}
+
+/** MENU BUTTON **/
+#heatMapsMenuHeader .wrapper {
+    width: 36px;
+    height: 100%;
+    display: flex;
+    cursor: pointer;
+    border-right: 1px solid #cccccc;
+    max-height: 44px;
+}
+
+#heatMapsMenuHeader .wrapper img {
+    margin: auto;
+}
+
+/** Animate button **/
+#heatMapsMenuHeader .wrapper img {
+    text-indent: 0px;
+    -moz-transition: all 0.4s 0.1s ease-in;
+    -o-transition: all 0.4s 0.1s ease-in;
+    -webkit-transition: all 0.4s 0.1s ease-in;
+}
+
+#heatMapsMenuHeader .wrapper img.isOpen {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
