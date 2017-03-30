@@ -64,6 +64,7 @@ html, body {
     height: 44px;
     border-bottom: 1px solid #cccccc;
     padding: 0;
+    cursor: pointer;
 }
 
 #heatMapsMenu #heatMapsMenuHeader .header {
@@ -171,7 +172,6 @@ html, body {
     width: 36px;
     height: 100%;
     display: flex;
-    cursor: pointer;
     border-right: 1px solid #cccccc;
     max-height: 44px;
 }

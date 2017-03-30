@@ -23,7 +23,7 @@
     });
 
 
-    buttonSwitch.onclick = function () {
+    document.getElementById('heatMapsMenuHeader').onclick = function () {
         MenuIsOpen = !MenuIsOpen;
         if(MenuIsOpen) {
             buttonSwitch.classList.add('isOpen');
