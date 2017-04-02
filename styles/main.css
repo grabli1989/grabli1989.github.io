@@ -98,6 +98,7 @@ html, body {
     -moz-transition: all 0.15s 0.1s ease-in;
     -o-transition: all 0.15s 0.1s ease-in;
     -webkit-transition: all 0.15s 0.1s ease-in;
+    transition: all 0.15s 0.1s ease-in;
 }
 
 #heatMapsMenu #heatMapsMenuBody .menu-item.hoverMenuItem {
@@ -141,6 +142,7 @@ html, body {
     -moz-transition: all 0.4s 0.1s ease-in;
     -o-transition: all 0.4s 0.1s ease-in;
     -webkit-transition: all 0.4s 0.1s ease-in;
+    transition: all 0.4s 0.1s ease-in;
     /*-moz-transition: all 1s linear;*/
     /*-o-transition: all 1s linear;*/
     /*-webkit-transition: all 1s linear;*/
@@ -161,6 +163,7 @@ html, body {
     -moz-transition: all 0.4s 0.1s ease-in;
     -o-transition: all 0.4s 0.1s ease-in;
     -webkit-transition: all 0.4s 0.1s ease-in;
+    transition: all 0.4s 0.1s ease-in;
 }
 
 .container .poweredByVibe.opacity {
@@ -178,6 +181,8 @@ html, body {
 
 #heatMapsMenuHeader .wrapper img {
     margin: auto;
+    width: 19px;
+    height: 19px;
 }
 
 /** Animate button **/
@@ -186,10 +191,12 @@ html, body {
     -moz-transition: all 0.4s 0.1s ease-in;
     -o-transition: all 0.4s 0.1s ease-in;
     -webkit-transition: all 0.4s 0.1s ease-in;
+    transition: all 0.4s 0.1s ease-in;
 }
 
 #heatMapsMenuHeader .wrapper img.isOpen {
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -o-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
