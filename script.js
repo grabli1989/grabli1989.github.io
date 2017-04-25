@@ -8,9 +8,8 @@ $(function () {
         from = $("#b_checkin_from")
             .datepicker({
                 dateFormat: "dd MM `y",
-                setDate: +7,
                 changeMonth: true,
-                numberOfMonths: 3
+                numberOfMonths: 1
             })
             .datepicker("setDate", new Date())
             .on("change", function () {
@@ -19,9 +18,8 @@ $(function () {
         to = $("#b_checkin_to")
             .datepicker({
                 dateFormat: "dd MM `y",
-                setDate: +7,
                 changeMonth: true,
-                numberOfMonths: 3
+                numberOfMonths: 1
             })
             .datepicker("setDate", +1)
             .on("change", function () {
