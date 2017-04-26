@@ -25,13 +25,13 @@ form_markup += ' <input type="hidden" id="b_checkout_month" name="checkout_year_
 form_markup += ' <div class="b_availDatesInner"> ';
 form_markup += ' <h4>Check-in date</h4> ';
 form_markup += ' <div id="b_availCheckIn"> ';
-form_markup += ' <input type="text" id="b_checkin_from" style="background: #FFFFFF;border: 1px solid #CCCCCC;color: #333;font-size: 100%;padding: 2px;" name="checkin">';
+form_markup += ' <input type="text" id="b_checkin_from" class="b_checkin_from" style="background: #FFFFFF;border: 1px solid #CCCCCC;color: #333;font-size: 100%;padding: 2px;" name="checkin">';
 form_markup += ' </div> ';
 form_markup += ' </div> ';
 form_markup += ' <div class="b_availDatesInner"> ';
 form_markup += ' <h4>Check-out date</h4> ';
 form_markup += ' <div id="b_availCheckOut"> ';
-form_markup += ' <input type="text" id="b_checkin_to" style="background: #FFFFFF;border: 1px solid #CCCCCC;color: #333;font-size: 100%;padding: 2px;" name="checkout"> ';
+form_markup += ' <input type="text" id="b_checkin_to" class="b_checkin_to" style="background: #FFFFFF;border: 1px solid #CCCCCC;color: #333;font-size: 100%;padding: 2px;" name="checkout"> ';
 form_markup += ' </div> ';
 form_markup += ' </div> ';
 form_markup += ' <div id="b_availSubmit"> ';

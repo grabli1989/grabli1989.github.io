@@ -5,7 +5,7 @@ $(function () {
         b_checkout_month = $('#b_checkout_month');
 
     var dateFormat = "dd MM `y",
-        from = $("#b_checkin_from")
+        from = $(".b_checkin_from")
             .datepicker({
                 dateFormat: "dd MM `y",
                 changeMonth: true,
@@ -15,7 +15,7 @@ $(function () {
             .on("change", function () {
                 to.datepicker("option", "minDate", getDate(this, 'from'));
             }),
-        to = $("#b_checkin_to")
+        to = $(".b_checkin_to")
             .datepicker({
                 dateFormat: "dd MM `y",
                 changeMonth: true,
