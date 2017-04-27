@@ -1,11 +1,16 @@
 $(function () {
-    var b_checkin_day = $('#b_checkin_day'),
-        b_checkin_month = $('#b_checkin_month'),
-        b_checkout_day = $('#b_checkout_day'),
-        b_checkout_month = $('#b_checkout_month');
+    var b_checkin_day = $('#b_checkin_day' + y),
+        b_checkin_month = $('#b_checkin_month' + y),
+        b_checkout_day = $('#b_checkout_day' + y),
+        b_checkout_month = $('#b_checkout_month' + y);
+
+    var selector_from = '#b_checkin_from' + y,
+        selector_to = '#b_checkin_to' + y;
+
+    console.log(y);
 
     var dateFormat = "dd MM `y",
-        from = $(".b_checkin_from")
+        from = $(selector_from)
             .datepicker({
                 dateFormat: "dd MM `y",
                 changeMonth: true,
@@ -15,7 +20,7 @@ $(function () {
             .on("change", function () {
                 to.datepicker("option", "minDate", getDate(this, 'from'));
             }),
-        to = $(".b_checkin_to")
+        to = $(selector_to)
             .datepicker({
                 dateFormat: "dd MM `y",
                 changeMonth: true,
@@ -25,7 +30,7 @@ $(function () {
             .on("change", function () {
                 from.datepicker("option", "maxDate", getDate(this, 'to'));
             });
-
+    y += 1;
     function getDate(element, fromto) {
         var date;
         try {

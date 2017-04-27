@@ -7,6 +7,11 @@
 // lang
 // disable => s_raw_param_disable
 // powered => s_raw_param_powered
+if(typeof i == 'undefined') {
+    var i = 0, y = 0;
+} else {
+    i += 1;
+}
 var form_markup = '';
 form_markup += ' <div id="b_editDates"> ';
 form_markup += ' <h3>When would you like to stay?</h3> ';
@@ -18,20 +23,20 @@ form_markup += ' <input type="hidden" name="lang" value="en"/> ';
 form_markup += ' <input type="hidden" name="pb" value=""/> ';
 form_markup += ' <input type="hidden" name="stage" value="0"/> ';
 form_markup += ' <input type="hidden" name="hostname" value="bookitbutton.booking.com"/> ';
-form_markup += ' <input type="hidden" id="b_checkin_day" name="checkin_monthday" value="0" /> ';
-form_markup += ' <input type="hidden" id="b_checkin_month" name="checkin_year_month" value="0" /> ';
-form_markup += ' <input type="hidden" id="b_checkout_day" name="checkout_monthday" value="0" /> ';
-form_markup += ' <input type="hidden" id="b_checkout_month" name="checkout_year_month" value="0" /> ';
+form_markup += ' <input type="hidden" id="b_checkin_day' + i + '" name="checkin_monthday" value="0" /> ';
+form_markup += ' <input type="hidden" id="b_checkin_month' + i + '" name="checkin_year_month" value="0" /> ';
+form_markup += ' <input type="hidden" id="b_checkout_day' + i + '" name="checkout_monthday" value="0" /> ';
+form_markup += ' <input type="hidden" id="b_checkout_month' + i + '" name="checkout_year_month" value="0" /> ';
 form_markup += ' <div class="b_availDatesInner"> ';
 form_markup += ' <h4>Check-in date</h4> ';
 form_markup += ' <div id="b_availCheckIn"> ';
-form_markup += ' <input type="text" id="b_checkin_from" class="b_checkin_from" style="background: #FFFFFF;border: 1px solid #CCCCCC;color: #333;font-size: 100%;padding: 2px;" name="checkin">';
+form_markup += ' <input type="text" id="b_checkin_from' + i + '" style="background: #FFFFFF;border: 1px solid #CCCCCC;color: #333;font-size: 100%;padding: 2px;" name="checkin">';
 form_markup += ' </div> ';
 form_markup += ' </div> ';
 form_markup += ' <div class="b_availDatesInner"> ';
 form_markup += ' <h4>Check-out date</h4> ';
 form_markup += ' <div id="b_availCheckOut"> ';
-form_markup += ' <input type="text" id="b_checkin_to" class="b_checkin_to" style="background: #FFFFFF;border: 1px solid #CCCCCC;color: #333;font-size: 100%;padding: 2px;" name="checkout"> ';
+form_markup += ' <input type="text" id="b_checkin_to' + i + '" style="background: #FFFFFF;border: 1px solid #CCCCCC;color: #333;font-size: 100%;padding: 2px;" name="checkout"> ';
 form_markup += ' </div> ';
 form_markup += ' </div> ';
 form_markup += ' <div id="b_availSubmit"> ';
@@ -43,9 +48,11 @@ form_markup += ' </div> ';
 // Write the form markup to the page
 document.write(form_markup);
 
-document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>' +
+document.write(
+    '<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>' +
     '<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>' +
-    '<script type="text/javascript" src="script.js"></script>');
+    '<script type="text/javascript" src="script.js"></script>'
+);
 
 // If specified, load a CSS skin
 var css_href = 'https://aff.bstatic.com/images/partner/330843/form.css';
