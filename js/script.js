@@ -44,6 +44,7 @@ $(function () {
         $('#button2').hide();
         $('#image-container').show();
         imageContainerRender();
+        loadImages();
     });
 
     // $('.slider-item').on('click', function (e) {
@@ -56,7 +57,8 @@ $(function () {
         $this.on("click", function (e) {
             e.preventDefault();
             var slideNum = $this.data().slide;
-            addNewImage(slideNum);
+            $('#brightness').hide();
+            showImage(slideNum);
         });
     });
     $('.question').each(function () {
@@ -75,4 +77,12 @@ $(function () {
         // console.log(e);
         resizeContainer();
     });
+    // $('#image-container').on('click', function () {
+    //     resetAnchors();
+    // });
+
+    var slider = document.getElementById('brightness');
+    slider.onchange = function() {
+        changBrightness(slider.value);
+    };
 });

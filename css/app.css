@@ -49,6 +49,7 @@ html, body {
     margin: 0 auto;
     width: 100%;
     height: 80%;
+    border: 1px solid #bebebe;
 }
 
 #image-container {
@@ -63,13 +64,13 @@ html, body {
     position: relative;
     display: flex;
     background-color: rgba(0, 255, 0, 0.1);
-    margin: 5px 0;
+    margin: 5px auto;
     text-align: center;
     border: 1px solid rgba(0, 255, 0, 0.1);
     -webkit-border-radius: 35px;
     -moz-border-radius: 35px;
     border-radius: 35px;
-    width: 100%;
+    width: 95%;
     height: 40%;
 }
 
