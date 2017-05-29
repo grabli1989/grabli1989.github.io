@@ -71,7 +71,8 @@ $(function () {
     $('.close').on('click', function () {
         $('.modal').hide();
     });
-    // $(window).resize(function () {
-    //     reload();
-    // });
+    $(window).resize(function (e) {
+        // console.log(e);
+        resizeContainer();
+    });
 });

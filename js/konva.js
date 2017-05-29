@@ -8,13 +8,11 @@ var ratioImage1 = null;
 var newImage = null;
 var imageGroup = null;
 
-// var reset = function () {
-//     if(!layer) return;
-//     layer.children = null;
-//     imageContainerRender();
-// }
-var reload = function () {
-    layer.draw();
+var resizeContainer = function () {
+    if(stage) {
+        stage.width(imageContainer.width());
+        stage.height(imageContainer.height());
+    }
 };
 var update = function (activeAnchor) {
     var group = activeAnchor.getParent();
@@ -55,7 +53,7 @@ var update = function (activeAnchor) {
         //     // bottomLeft.setY(width * ratioImage1);
         //     // bottomRight.setY(width * ratioImage1);
         // }
-    if(width && height) {
+    if(width && height && width > 15 && height > 15) {
         if(height < width * ratioImage1) {
             image.width(height/ratioImage1);
             image.height(height);
@@ -148,7 +146,7 @@ var imageContainerRender = function () {
     }
 
     ratioImage1 = height / width;
-    console.log('container ratio:' + ratioImage1);
+    // console.log('container ratio:' + ratioImage1);
 
     var imageObj1 = new Image();
     imageObj1.onload = function() {
@@ -159,13 +157,13 @@ var imageContainerRender = function () {
         var originRatio = originHeight / originWidth;
         console.log('origin ratio:' + originRatio);
         if(originRatio < ratioImage1) {
-            console.log(containerHeight);
+            // console.log(containerHeight);
             height = width * originRatio;
             width = height / originRatio;
             image1Group.setY(containerHeight / 2 - height / 2);
         } else {
             height = height;
-            width = originHeight * originRatio;
+            width = height / originRatio;
             image1Group.setX(containerWidth / 2 - width / 2);
         }
         image1.width(width);
@@ -179,13 +177,11 @@ var imageContainerRender = function () {
             opacity: 0,
             draggable: true
         });
-
+        image1Group.add(anchor1Group);
         addAnchor(image1Group, 0, 0, 'topLeft', 0);
         addAnchor(image1Group, width, 0, 'topRight', 0);
         addAnchor(image1Group, width, height, 'bottomRight');
         addAnchor(image1Group, 0, height, 'bottomLeft', 0);
-        image1Group.add(anchor1Group);
-
     };
     imageObj1.src = '/img/image1.jpg';
 
@@ -245,7 +241,7 @@ var addNewImage = function (slideNum) {
         imageGroup.draggable(false);
     });
 
-    center.on('mouseup touchend', function () {
+    center.on('mouseup touchend dragend', function () {
         imageGroup.draggable(true);
     });
 
@@ -316,15 +312,15 @@ var addNewImage = function (slideNum) {
     // imageGroup.add(image);
     imageGroup.add(center);
 
-    imageGroup.lastRotation = 0;
-    imageGroup.angularVelocity = 6;
+    // imageGroup.lastRotation = 0;
+    // imageGroup.angularVelocity = 6;
     imageGroup.controlled = false;
     center.on('mousedown touchstart touchmove', function(evt) {
         imageGroup.angularVelocity = 0;
         imageGroup.controlled = true;
     });
 
-    stage.on('contentMouseup', function() {
+    stage.on('contentMouseup touchend', function() {
         imageGroup.controlled = false;
     });
     stage.on('contentMousemove touchstart touchmove', function() {
@@ -416,12 +412,12 @@ var addNewImage = function (slideNum) {
 // Rotation
 Konva.angleDeg = false;
 function animate(layer, image, frame) {
-    // 20% slow down per second
-    var angularFriction = 0.2;
-    var angularVelocityChange = image.angularVelocity * frame.timeDiff * (1 - angularFriction) / 1000;
-    image.angularVelocity -= angularVelocityChange;
-
-    image.angularVelocity = (image.getRotation() - image.lastRotation) * 1000 / frame.timeDiff;
-
-    image.lastRotation = image.getRotation();
+    // // 20% slow down per second
+    // var angularFriction = 0.2;
+    // var angularVelocityChange = image.angularVelocity * frame.timeDiff * (1 - angularFriction) / 1000;
+    // image.angularVelocity -= angularVelocityChange;
+    //
+    // image.angularVelocity = (image.getRotation() - image.lastRotation) * 1000 / frame.timeDiff;
+    //
+    // image.lastRotation = image.getRotation();
 }
