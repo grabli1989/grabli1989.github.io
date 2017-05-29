@@ -27,8 +27,9 @@ html, body {
 }
 
 .container {
+    padding: 0 20px;
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 760px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -46,7 +47,7 @@ html, body {
     position: relative;
     flex: 1 3 auto;
     margin: 0 auto;
-    width: 95%;
+    width: 100%;
     height: 80%;
 }
 
@@ -56,20 +57,11 @@ html, body {
     flex: 1 3 auto;
     max-width: 800px;
     width: 100%;
-    /*height: 100%;*/
 }
-
-/*.container .content::after {*/
-    /*content: '\00a0'; !* &nbsp; *!*/
-    /*display: block;*/
-    /*height: 0px;*/
-    /*visibility: hidden;*/
-/*}*/
 
 .container .content .button {
     position: relative;
     display: flex;
-    /*flex: 1 1 auto;*/
     background-color: rgba(0, 255, 0, 0.1);
     margin: 5px 0;
     text-align: center;
@@ -86,7 +78,6 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    /*display: block;*/
     position: absolute;
     margin: 0;
     height: 100%;
@@ -139,12 +130,13 @@ html, body {
 }
 
 .slider .slick-prev {
-    right: 0;
+    right: -10px;
     z-index: 1;
 }
 
 .slider .slick-next {
-    left: 0;
+    left: -10px;
+    z-index: 1;
 }
 
 .modal {
@@ -179,51 +171,6 @@ html, body {
     cursor: pointer;
 }
 
-/*.clickable {*/
-    /*!*display: none;*!*/
-/*}*/
-/*.resize-dragb1 {*/
-    /*z-index: 100;*/
-    /*background: url("/img/clickable/img1.png") no-repeat;*/
-    /*background-size: 100% auto;*/
-/*}*/
-
-/*.resize-dragb2 {*/
-    /*z-index: 200;*/
-    /*background: url("/img/clickable/img2.png") no-repeat;*/
-    /*background-size: 100% auto;*/
-/*}*/
-
-/*.resize-dragb3 {*/
-    /*z-index: 300;*/
-    /*background: url("/img/clickable/img3.png") no-repeat;*/
-    /*background-size: 100% auto;*/
-/*}*/
-
-/*.resize-dragb4 {*/
-    /*z-index: 400;*/
-    /*background: url("/img/clickable/img4.png") no-repeat;*/
-    /*background-size: 100% auto;*/
-/*}*/
-
-/*.resize-dragb5 {*/
-    /*z-index: 500;*/
-    /*background: url("/img/clickable/img5.png") no-repeat;*/
-    /*background-size: 100% auto;*/
-/*}*/
-
-/*.resize-dragb6 {*/
-    /*z-index: 600;*/
-    /*background: url("/img/clickable/img6.png") no-repeat;*/
-    /*background-size: 100% auto;*/
-/*}*/
-
-/*.resize-dragb7 {*/
-    /*z-index: 700;*/
-    /*background: url("/img/clickable/img7.png") no-repeat;*/
-    /*background-size: 100% auto;*/
-/*}*/
-
 #button2 {
     display: none;
 }
@@ -250,7 +197,6 @@ input[type=range]::-webkit-slider-runnable-track {
     animate: 0.2s;
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
     background: #2c2c2c;
-    /*border-radius: 25px;*/
     border: 0px solid #000101;
 }
 input[type=range]::-webkit-slider-thumb {
@@ -258,11 +204,9 @@ input[type=range]::-webkit-slider-thumb {
     border: 0px solid #000000;
     height: 30px;
     width: 29px;
-    /*border-radius: 7px;*/
     background: #b50b18;
     cursor: pointer;
     -webkit-appearance: none;
-    /*margin-top: -3.6px;*/
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
     background: #2c2c2c;

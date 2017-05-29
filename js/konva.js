@@ -8,11 +8,11 @@ var ratioImage1 = null;
 var newImage = null;
 var imageGroup = null;
 
-var reset = function () {
-    if(!layer) return;
-    layer.children = null;
-    imageContainerRender();
-}
+// var reset = function () {
+//     if(!layer) return;
+//     layer.children = null;
+//     imageContainerRender();
+// }
 var reload = function () {
     layer.draw();
 };
@@ -72,9 +72,11 @@ var update = function (activeAnchor) {
             // bottomRight.setY(width * ratioImage1);
         }
 
-
-        imageGroup.offsetX(image.getWidth()/2);
-        imageGroup.offsetY(image.getHeight()/2);
+        if(image.getParent().getAttr('name') == 'imageGroup') {
+            imageGroup.offsetX(image.getWidth()/2);
+            imageGroup.offsetY(image.getHeight()/2);
+            // console.log(image.getParent());
+        }
 
         // if(width > image.width()) {
         //     // image.width(width);
@@ -100,7 +102,7 @@ var addAnchor = function (group, x, y, name, opacity) {
         stroke: '#666',
         fill: '#ddd',
         strokeWidth: 2,
-        radius: 8,
+        radius: 15,
         name: name,
         draggable: draggable,
         dragOnTop: false,
@@ -138,18 +140,59 @@ var imageContainerRender = function () {
     imageContainer = $('#content');
     width = imageContainer.width();
     height = imageContainer.height();
+    var containerWidth = width;
+    var containerHeight = height;
 
     if(!width || !height ) {
         return;
     }
 
     ratioImage1 = height / width;
-    console.log(ratioImage1);
+    console.log('container ratio:' + ratioImage1);
+
+    var imageObj1 = new Image();
+    imageObj1.onload = function() {
+        image1.image(imageObj1);
+        layer.draw();
+        var originWidth = image1.getImage().width;
+        var originHeight = image1.getImage().height;
+        var originRatio = originHeight / originWidth;
+        console.log('origin ratio:' + originRatio);
+        if(originRatio < ratioImage1) {
+            console.log(containerHeight);
+            height = width * originRatio;
+            width = height / originRatio;
+            image1Group.setY(containerHeight / 2 - height / 2);
+        } else {
+            height = height;
+            width = originHeight * originRatio;
+            image1Group.setX(containerWidth / 2 - width / 2);
+        }
+        image1.width(width);
+        image1.height(height);
+        layer.draw();
+
+        anchor1Group = new Konva.Group({
+            x: 0,
+            y: 0,
+            name: 'anchor1Group',
+            opacity: 0,
+            draggable: true
+        });
+
+        addAnchor(image1Group, 0, 0, 'topLeft', 0);
+        addAnchor(image1Group, width, 0, 'topRight', 0);
+        addAnchor(image1Group, width, height, 'bottomRight');
+        addAnchor(image1Group, 0, height, 'bottomLeft', 0);
+        image1Group.add(anchor1Group);
+
+    };
+    imageObj1.src = '/img/image1.jpg';
 
     stage = new Konva.Stage({
         container: 'image-container',
-        width: width,
-        height: height
+        width: containerWidth,
+        height: containerHeight
     });
     layer = new Konva.Layer();
     stage.add(layer);
@@ -161,42 +204,22 @@ var imageContainerRender = function () {
     });
 
     var image1Group = new Konva.Group({
-        x: 0,
-        y: 0,
+        // x: stage.getWidth()/2, y: stage.getHeight()/2,
+        // offsetX: width/2, offsetY: height/2,
+        width: width,
+        height: height,
         name: 'image1Group',
         draggable: true
     });
 
     layer.add(image1Group);
     image1Group.add(image1);
-
-    anchor1Group = new Konva.Group({
-        x: 0,
-        y: 0,
-        name: 'anchor1Group',
-        opacity: 0,
-        draggable: true
-    });
-
-    addAnchor(image1Group, 0, 0, 'topLeft', 0);
-    addAnchor(image1Group, width, 0, 'topRight', 0);
-    addAnchor(image1Group, width, height, 'bottomRight');
-    addAnchor(image1Group, 0, height, 'bottomLeft', 0);
-    image1Group.add(anchor1Group);
-
-
-    var imageObj1 = new Image();
-    imageObj1.onload = function() {
-        image1.image(imageObj1);
-        layer.draw();
-    };
-    imageObj1.src = '/img/image1.jpg';
 }
 
 
 
 var addNewImage = function (slideNum) {
-    reset();
+    // reset();
     var width = 128,
         height = 128;
     if(!stage || !layer || !imageContainer) {
@@ -211,7 +234,7 @@ var addNewImage = function (slideNum) {
     var center = new Konva.Circle({
         x: width / 2,
         y: -20,
-        radius: 8,
+        radius: 15,
         fill: '#555',
         name: 'center',
         opacity: 0,
@@ -226,16 +249,20 @@ var addNewImage = function (slideNum) {
         imageGroup.draggable(true);
     });
 
-    var selected = document.getElementsByClassName('resize-dragb' + slideNum)[0];
-    console.log(selected);
-
+    if(imageGroup) {
+        var image = imageGroup.getChildren(function (node) {
+            return node.getAttr('name') === 'image';
+        });
+        image.destroy();
+        imageGroup.destroy();
+    }
     var image = new Konva.Image({
-        image: selected,
         width: width,
         height: height,
         name: 'image',
         // draggable: true
     });
+
     newImage = image;
 
     image.on('mousedown touchstart', function () {
@@ -367,7 +394,7 @@ var addNewImage = function (slideNum) {
     };
 
     anchor.on('dragmove', function() {
-        console.log(newImage);
+        // console.log(newImage);
         var clone = newImage.clone({
             brightness: newImage.brightness(),
             width: imageGroup.offsetX()*2,
