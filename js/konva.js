@@ -138,7 +138,7 @@ var addAnchor = function (group, x, y, name, opacity) {
     group.add(anchor);
     return anchor;
 }
-var imageContainerRender = function () {
+var imageContainerRender = function (imgData) {
     imageContainer = $('#content');
     width = imageContainer.width();
     height = imageContainer.height();
@@ -159,7 +159,7 @@ var imageContainerRender = function () {
         var originWidth = image1.getImage().width;
         var originHeight = image1.getImage().height;
         var originRatio = originHeight / originWidth;
-        console.log('origin ratio:' + originRatio);
+        // console.log('origin ratio:' + originRatio);
         if(originRatio < ratioImage1) {
             // console.log(containerHeight);
             height = width * originRatio;
@@ -187,7 +187,7 @@ var imageContainerRender = function () {
         image1anchor = addAnchor(image1Group, width, height, 'bottomRight');
         addAnchor(image1Group, 0, height, 'bottomLeft', 0);
     };
-    imageObj1.src = '/img/image1.jpg';
+    imageObj1.src = imgData;
 
     stage = new Konva.Stage({
         container: 'image-container',
@@ -667,3 +667,58 @@ function animate(layer, image, frame) {
 
     image.lastRotation = image.getRotation();
 }
+
+// Attach event listener
+document.getElementById('upload-background').addEventListener('change', doUpload);
+
+// Take event from file change & handle it
+function doUpload(e){
+    // The user might upload multiple files, we'll take the first
+    var file = e.target.files[0];
+
+    // Check that there is a file uploaded
+    if(file){
+        // We need to use a FileReader to actually read the file.
+        var reader = new FileReader();
+
+        // When it's loaded, we'll send the image data to the canvas method
+        reader.onload = function(event){
+            imageContainerRender(event.target.result);
+            loadImages();
+        }
+
+        // Pass the reader the file to read and give us the DataURL
+        reader.readAsDataURL(file);
+    }
+}
+
+// // Handle the returned image data
+// function canvasLoadImage(imgData){
+//     // Create a New Imgae
+//     var img = new Image();
+//
+//     // Assign the image data as the source - as we are using a data URL
+//     img.src = imgData;
+//
+//     // Always use onload with images!
+//     img.onload = function(){
+//
+//         // Load the Canvas & Context
+//         var canvas = document.getElementById('canvas');
+//         var context = canvas.getContext('2d');
+//
+//         var hRatio = canvas.width  / img.width    ;
+//         var vRatio =  canvas.height / img.height  ;
+//         var ratio  = Math.min ( hRatio, vRatio );
+//         var centerShift_x = ( canvas.width - img.width*ratio ) / 2;
+//         var centerShift_y = ( canvas.height - img.height*ratio ) / 2;
+//         context.clearRect(0,0,canvas.width, canvas.height);
+//         context.drawImage(img, 0,0, img.width, img.height,
+//             centerShift_x,centerShift_y,img.width*ratio, img.height*ratio);
+//
+//         // Draw the image
+//         //context.drawImage(img, 0, 0);
+//
+//         // More here?
+//     }
+// }

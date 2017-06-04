@@ -42,9 +42,10 @@ $(function () {
         e.preventDefault();
         $('#button1').hide();
         $('#button2').hide();
+        $('#upload-background').click();
         $('#image-container').show();
-        imageContainerRender();
-        loadImages();
+        // imageContainerRender();
+        // loadImages();
     });
 
     // $('.slider-item').on('click', function (e) {

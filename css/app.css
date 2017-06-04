@@ -268,3 +268,7 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
     background: #2c2c2c;
 }
+
+#upload-background {
+    display: none;
+}
