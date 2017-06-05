@@ -7,11 +7,12 @@ var image1anchor = null;
 var ratioImage1 = null;
 var currentImage = null;
 var imageGroup = null;
+var image1Group = null;
 var groups = {};
 var countClickBackground = 1;
 
 var resizeContainer = function () {
-    if(stage) {
+    if (stage) {
         stage.width(imageContainer.width());
         stage.height(imageContainer.height());
     }
@@ -44,22 +45,22 @@ var update = function (activeAnchor) {
             topLeft.setX(anchorX);
             break;
     }
-    if('undefined' == typeof image) {
+    if ('undefined' == typeof image) {
         image = group.getParent().get('Image')[0];
     }
     ratioImage1 = image.height() / image.width();
     image.position(topLeft.position());
     var width = topRight.getX() - topLeft.getX();
     var height = bottomLeft.getY() - topLeft.getY();
-        // if((bottomLeft.getY() - topLeft.getY()) < (width * ratioImage1)) {
-        //     // bottomLeft.setY(width * ratioImage1);
-        //     // bottomRight.setY(width * ratioImage1);
-        // }
-    if(width && height && width > 15 && height > 15) {
-        if(height < width * ratioImage1) {
-            image.width(height/ratioImage1);
+    // if((bottomLeft.getY() - topLeft.getY()) < (width * ratioImage1)) {
+    //     // bottomLeft.setY(width * ratioImage1);
+    //     // bottomRight.setY(width * ratioImage1);
+    // }
+    if (width && height && width > 15 && height > 15) {
+        if (height < width * ratioImage1) {
+            image.width(height / ratioImage1);
             image.height(height);
-            bottomRight.setX(height/ratioImage1);
+            bottomRight.setX(height / ratioImage1);
             bottomRight.setY(height);
             // bottomLeft.setY(width * ratioImage1);
             // bottomRight.setY(width * ratioImage1);
@@ -73,11 +74,22 @@ var update = function (activeAnchor) {
         }
 
         //
-        if(image.getParent().getAttr('name') == 'imageGroup') {
-            imageGroup.offsetX(image.getWidth()/2);
-            imageGroup.offsetY(image.getHeight()/2);
-            // console.log(image.getParent());
-        }
+        // console.log(image.getParent());
+        // if(image.getAttr('name') === 'image1') {
+        //
+        //     image.offsetX(image.getWidth()/2);
+        //     image.offsetY(image.getHeight()/2);
+        //     image.setX();
+        //     image.setY();
+        //     // image1Group.offsetX(image.getWidth() / 2);
+        //     // image1Group.offsetY(image.getHeight() / 2);
+        //     var anchorRotate = image1Group.getChildren(function (node) {
+        //         return node.getAttr('name') === 'anchorRotate';
+        //     });
+        //     anchorRotate.setX(image.getWidth() / 2);
+        //
+        //
+        // }
         image.cache();
 
         // if(width > image.width()) {
@@ -110,26 +122,26 @@ var addAnchor = function (group, x, y, name, opacity) {
         dragOnTop: false,
         opacity: opacity
     });
-    anchor.on('dragmove', function() {
+    anchor.on('dragmove', function () {
         update(this);
         // layer.draw();
     });
-    anchor.on('mousedown touchstart', function() {
+    anchor.on('mousedown touchstart', function () {
         group.setDraggable(false);
         this.moveToTop();
     });
-    anchor.on('dragend', function() {
+    anchor.on('dragend', function () {
         group.setDraggable(true);
         // layer.draw();
     });
     // add hover styling
-    anchor.on('mouseover', function() {
+    anchor.on('mouseover', function () {
         var layer = this.getLayer();
         document.body.style.cursor = 'pointer';
         this.setStrokeWidth(4);
         layer.draw();
     });
-    anchor.on('mouseout', function() {
+    anchor.on('mouseout', function () {
         var layer = this.getLayer();
         document.body.style.cursor = 'default';
         this.setStrokeWidth(2);
@@ -145,7 +157,7 @@ var imageContainerRender = function (imgData) {
     var containerWidth = width;
     var containerHeight = height;
 
-    if(!width || !height ) {
+    if (!width || !height) {
         return;
     }
 
@@ -153,45 +165,127 @@ var imageContainerRender = function (imgData) {
     // console.log('container ratio:' + ratioImage1);
 
     var imageObj1 = new Image();
-    imageObj1.onload = function() {
+    imageObj1.onload = function () {
         image1.image(imageObj1);
         layer.draw();
         var originWidth = image1.getImage().width;
         var originHeight = image1.getImage().height;
         var originRatio = originHeight / originWidth;
-        // console.log('origin ratio:' + originRatio);
-        // if(originRatio < ratioImage1) {
-        //     // console.log(containerHeight);
-        //     height = width * originRatio;
-        //     width = height / originRatio;
-        //     image1Group.setY(containerHeight / 2 - height / 2);
-        // } else {
-        //     height = height;
-        //     width = height / originRatio;
-        //     image1Group.setX(containerWidth / 2 - width / 2);
-        // }
 
-            height = containerHeight;
-            width = height / originRatio;
-            image1Group.setX(containerWidth / 2 - width / 2);
+        height = containerHeight;
+        width = height / originRatio;
+
+        var x = width / 2;
+        var y = height / 2;
+
+        image1Group = new Konva.Group({
+            x: containerWidth / 2,
+            y: y,
+            offsetX: width / 2,
+            offsetY: height / 2,
+            width: width,
+            height: height,
+            name: 'image1Group',
+            draggable: true
+        });
+
+        layer.add(image1Group);
+        image1Group.add(image1);
+
+
+        // image1Group.setX(containerWidth / 2 - width / 2);
 
 
         image1.width(width);
         image1.height(height);
         layer.draw();
 
-        // anchor1Group = new Konva.Group({
-        //     x: 0,
-        //     y: 0,
-        //     name: 'anchor1Group',
-        //     opacity: 0,
-        //     draggable: true
-        // });
-        // image1Group.add(anchor1Group);
+
         addAnchor(image1Group, 0, 0, 'topLeft', 0);
         addAnchor(image1Group, width, 0, 'topRight', 0);
         image1anchor = addAnchor(image1Group, width, height, 'bottomRight');
         addAnchor(image1Group, 0, height, 'bottomLeft', 0);
+
+        image1anchor.on('dragmove', function () {
+            // var anchorGroup = this.getParent();
+            // var imageGroup = anchorGroup.getParent();
+            // var anchorRotate = imageGroup.getChildren(function (node) {
+            //     return node.getAttr('name') === 'anchorRotate';
+            // })[0];
+            var image = image1Group.get('Image')[0];
+            // console.log(image);
+
+            // console.log(image.getWidth() / 2);
+            // console.log(image.getHeight() / 2);
+
+
+            image1Group.offsetX(image.getWidth() / 2);
+            image1Group.offsetY(image.getHeight() / 2);
+
+            anchorRotate.setX(image.width() / 2);
+        });
+
+        var anchorRotate = new Konva.Circle({
+            x: width / 2,
+            y: -20,
+            radius: 15,
+            fill: '#555',
+            name: 'anchorRotate',
+            dragOnTop: false
+        });
+        anchorRotate.hide();
+
+        image1Group.lastRotation = 0;
+        image1Group.angularVelocity = 6;
+        image1Group.controlled = false;
+
+        anchorRotate.on('mousedown touchstart', function () {
+            image1Group.draggable(false);
+        });
+
+        anchorRotate.on('mouseup touchend dragend', function () {
+            image1Group.draggable(true);
+        });
+
+        anchorRotate.on('mousedown touchstart touchmove', function (evt) {
+            image1Group.angularVelocity = 0;
+            image1Group.controlled = true;
+        });
+
+        image1.on('mousedown touchstart', function () {
+            image1Group.draggable(true);
+            image1Group.controlled = false;
+        });
+
+        image1Group.add(anchorRotate);
+
+        var animateLayer1 = new Konva.Layer();
+        animateLayer1.add(image1Group);
+        stage.add(animateLayer1);
+
+        var anim = new Konva.Animation(function (frame) {
+            animate(animateLayer1, image1Group, frame);
+        }, animateLayer1);
+        // wait one second and then spin the star
+        setTimeout(function () {
+            anim.start();
+        });
+
+        stage.on('contentMouseup touchend', function () {
+            image1Group.controlled = false;
+        });
+        stage.on('contentMousemove touchstart touchmove', function () {
+            if (image1Group.controlled) {
+                var mousePos = stage.getPointerPosition();
+                var x = image1Group.getX() - mousePos.x;
+                var y = image1Group.getY() - mousePos.y;
+                image1Group.setRotation(0.5 * Math.PI + Math.atan(y / x));
+                if (mousePos.x <= image1Group.getX()) {
+                    image1Group.rotate(Math.PI);
+                }
+            }
+        });
+
     };
     imageObj1.src = imgData;
 
@@ -211,21 +305,7 @@ var imageContainerRender = function (imgData) {
         name: 'image1',
         class: 'background'
     });
-
-    var image1Group = new Konva.Group({
-        // x: stage.getWidth()/2, y: stage.getHeight()/2,
-        // offsetX: width/2, offsetY: height/2,
-        width: width,
-        height: height,
-        name: 'image1Group',
-        draggable: true
-    });
-
-    layer.add(image1Group);
-    image1Group.add(image1);
 }
-
-
 
 // var addNewImage = function (slideNum) {
 //
@@ -429,8 +509,8 @@ var imageContainerRender = function (imgData) {
 //
 // }
 
-var showImage = function(slideNum) {
-    if(currentImage) {
+var showImage = function (slideNum) {
+    if (currentImage) {
         var parent = currentImage.getParent();
         parent.getChildren(function (node) {
             return node.getAttr('name') === 'anchorRotate';
@@ -457,19 +537,19 @@ var loadImages = function () {
         '/img/clickable/img6.png',
         '/img/clickable/img7.png',
     ];
-    var x = imageContainer.width()/2;
-    var y = imageContainer.height()/2;
+    var x = imageContainer.width() / 2;
+    var y = imageContainer.height() / 2;
 
     images.forEach(function (path, i) {
         i++;
         var image = null;
         var imageObj = new Image();
-        imageObj.onload = function() {
+        imageObj.onload = function () {
             image = new Konva.Image({
                 image: imageObj,
                 width: width,
                 height: height,
-                name:  'img' + i,
+                name: 'img' + i,
                 class: 'img'
             });
             image.hide();
@@ -481,6 +561,7 @@ var loadImages = function () {
                 x: x,
                 y: y,
                 name: 'imageGroup' + i,
+                class: 'imageGroup',
                 draggable: true
             });
 
@@ -511,7 +592,7 @@ var loadImages = function () {
                 group.draggable(true);
             });
 
-            anchorRotate.on('mousedown touchstart touchmove', function(evt) {
+            anchorRotate.on('mousedown touchstart touchmove', function (evt) {
                 group.angularVelocity = 0;
                 group.controlled = true;
             });
@@ -524,11 +605,11 @@ var loadImages = function () {
             animateLayer.add(group);
             stage.add(animateLayer);
 
-            var anim = new Konva.Animation(function(frame) {
+            var anim = new Konva.Animation(function (frame) {
                 animate(animateLayer, group, frame);
             }, animateLayer);
             // wait one second and then spin the star
-            setTimeout(function() {
+            setTimeout(function () {
                 anim.start();
             });
 
@@ -549,6 +630,10 @@ var loadImages = function () {
                 var anchorRotate = parent.getChildren(function (node) {
                     return node.getAttr('name') === 'anchorRotate';
                 });
+                var anchorRotate1 = image1Group.getChildren(function (node) {
+                    return node.getAttr('name') === 'anchorRotate';
+                });
+                anchorRotate1.hide();
                 anchorRotate.show();
                 // console.log(anchorRotate);
                 anchor.show();
@@ -560,41 +645,55 @@ var loadImages = function () {
                 countClickBackground = 1;
                 break;
             case 'background':
-                if(currentImage) {
+                if (currentImage) {
                     var imageParent = currentImage.getParent();
+                    var anchorRotate = image1Group.getChildren(function (node) {
+                        return node.getAttr('name') === 'anchorRotate';
+                    });
                     imageParent.get('Group')[0].hide();
                     imageParent.getChildren(function (node) {
                         return node.getAttr('name') === 'anchorRotate';
                     }).hide();
-                    if(countClickBackground == 2) {
+                    if (countClickBackground == 2) {
                         image1anchor.show();
+                        anchorRotate.show();
                         countClickBackground = 1;
                     } else {
                         countClickBackground++;
                     }
                     stage.batchDraw();
                     $('#brightness').hide();
+                } else {
+                    var anchorRotate1 = image1Group.getChildren(function (node) {
+                        return node.getAttr('name') === 'anchorRotate';
+                    });
+                    if(countClickBackground == 2) {
+                        anchorRotate1.show();
+                        stage.batchDraw();
+                    } else {
+                        countClickBackground++;
+                    }
                 }
                 break;
         }
 
     });
 
-    stage.on('contentMouseup touchend', function() {
-        if(currentImage) {
+    stage.on('contentMouseup touchend', function () {
+        if (currentImage) {
             var imageGroup = currentImage.getParent();
             imageGroup.controlled = false;
         }
     });
-    stage.on('contentMousemove touchstart touchmove', function() {
-        if(currentImage) {
+    stage.on('contentMousemove touchstart touchmove', function () {
+        if (currentImage) {
             var imageGroup = currentImage.getParent();
-            if(imageGroup.controlled) {
+            if (imageGroup.controlled) {
                 var mousePos = stage.getPointerPosition();
                 var x = imageGroup.getX() - mousePos.x;
                 var y = imageGroup.getY() - mousePos.y;
                 imageGroup.setRotation(0.5 * Math.PI + Math.atan(y / x));
-                if(mousePos.x <= imageGroup.getX()) {
+                if (mousePos.x <= imageGroup.getX()) {
                     imageGroup.rotate(Math.PI);
                 }
             }
@@ -604,7 +703,7 @@ var loadImages = function () {
 }
 
 var resetAnchors = function () {
-    if(currentImage) {
+    if (currentImage) {
         var imageParent = currentImage.getParent();
         imageParent.get('Group')[0].hide();
         imageParent.getChildren(function (node) {
@@ -639,7 +738,7 @@ var createAnchorGroup = function (i, w, h) {
     var anchor = addAnchor(anchorGroup, width, height, 'bottomRight');
     addAnchor(anchorGroup, 0, height, 'bottomLeft', 0);
 
-    anchor.on('dragmove', function() {
+    anchor.on('dragmove', function () {
         var anchorGroup = this.getParent();
         var imageGroup = anchorGroup.getParent();
         var anchorRotate = imageGroup.getChildren(function (node) {
@@ -648,10 +747,10 @@ var createAnchorGroup = function (i, w, h) {
         var image = imageGroup.get('Image')[0];
         // console.log(image);
 
-        imageGroup.offsetX(image.getWidth()/2);
-        imageGroup.offsetY(image.getHeight()/2);
+        imageGroup.offsetX(image.getWidth() / 2);
+        imageGroup.offsetY(image.getHeight() / 2);
 
-        anchorRotate.setX(image.width()/2);
+        anchorRotate.setX(image.width() / 2);
     });
 
     return anchorGroup;
@@ -675,17 +774,17 @@ function animate(layer, image, frame) {
 document.getElementById('upload-background').addEventListener('change', doUpload);
 
 // Take event from file change & handle it
-function doUpload(e){
+function doUpload(e) {
     // The user might upload multiple files, we'll take the first
     var file = e.target.files[0];
 
     // Check that there is a file uploaded
-    if(file){
+    if (file) {
         // We need to use a FileReader to actually read the file.
         var reader = new FileReader();
 
         // When it's loaded, we'll send the image data to the canvas method
-        reader.onload = function(event){
+        reader.onload = function (event) {
             imageContainerRender(event.target.result);
             loadImages();
         }
