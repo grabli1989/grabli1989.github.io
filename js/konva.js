@@ -160,16 +160,22 @@ var imageContainerRender = function (imgData) {
         var originHeight = image1.getImage().height;
         var originRatio = originHeight / originWidth;
         // console.log('origin ratio:' + originRatio);
-        if(originRatio < ratioImage1) {
-            // console.log(containerHeight);
-            height = width * originRatio;
-            width = height / originRatio;
-            image1Group.setY(containerHeight / 2 - height / 2);
-        } else {
-            height = height;
+        // if(originRatio < ratioImage1) {
+        //     // console.log(containerHeight);
+        //     height = width * originRatio;
+        //     width = height / originRatio;
+        //     image1Group.setY(containerHeight / 2 - height / 2);
+        // } else {
+        //     height = height;
+        //     width = height / originRatio;
+        //     image1Group.setX(containerWidth / 2 - width / 2);
+        // }
+
+            height = containerHeight;
             width = height / originRatio;
             image1Group.setX(containerWidth / 2 - width / 2);
-        }
+
+
         image1.width(width);
         image1.height(height);
         layer.draw();
@@ -531,9 +537,6 @@ var loadImages = function () {
         };
         imageObj.src = path;
     });
-
-
-
 
     stage.on('click tap touchstart', function (evt) {
         var target = evt.target;
