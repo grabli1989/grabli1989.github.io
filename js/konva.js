@@ -535,7 +535,7 @@ var loadImages = function () {
 
 
 
-    stage.on('click tap', function (evt) {
+    stage.on('click tap touchstart', function (evt) {
         var target = evt.target;
         var parent = target.getParent();
         var targetClassAttr = target.getAttr('class');
